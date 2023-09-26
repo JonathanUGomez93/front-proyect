@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #ffff;
+}
+/* header.ejs */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7A3A3C;
+    padding:  10px;
+    box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75);
+}
+nav img{
+    width: 100px;
+    height: 100px;
+}
