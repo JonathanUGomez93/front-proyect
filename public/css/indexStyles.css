@@ -1,8 +1,15 @@
+/* 
+titulos
+font-family: 'Playfair Display', serif;
+cuerpo
+font-family: 'Lato', sans-serif;
+*/
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #ffff;
+    font-family: 'Lato', sans-serif;
 }
 /* header.ejs */
 nav{
@@ -18,4 +25,50 @@ nav{
 nav img{
     width: 100px;
     height: 100px;
+}
+.searchBar{
+    position: relative;
+}
+.searchBar input{
+    max-width: 350px;
+    padding: 10px;
+    padding-right: 35px;
+    border-radius: 5px;
+    border: 0;
+    /* outline-color:#7A3A3C ; */
+    outline: none;
+    font-size: 1rem;
+}
+.searchBar button{
+    background-color: white;
+    padding: 10px 15px;
+    position: absolute;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 5px 5px 0;
+    color: #7A3A3C;
+    cursor: pointer;
+}
+.accountMenu i{
+    color: white;
+    font-size: 1.5rem;
+}
+.accountMenu a{
+    color: white;
+    display: none;
+}
+.productCart a{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/*media querys*/
+/*tablet*/
+@media (min-width: 520px){
+}
+/*desktop*/
+@media (min-width: 1280px){
 }
