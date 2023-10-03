@@ -4,7 +4,6 @@ font-family: 'Playfair Display', serif;
 cuerpo
 font-family: 'Lato', sans-serif;
 */
-
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +13,7 @@ font-family: 'Lato', sans-serif;
 /* header.ejs */
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #7A3A3C;
     padding:  10px;
@@ -59,16 +58,82 @@ nav img{
 .accountMenu a{
     color: white;
     display: none;
+    text-decoration: none;
 }
 .productCart a{
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
 }
+/* body */
+.headline{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 2rem;
+}
+/* slider */
+.imgPractice{
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.imgPractice ul{
+    display: flex;
+    width: 300%;
+    animation: slide 15s infinite cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.imgPractice img{
+    width: 95%;
+}
+@keyframes slide{
+    0% {
+        margin-left: 0;
+    }
+    33.33% {
+        margin-left: -100%;
+    }
+    66.67% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+} 
+/* footer */
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
+    .searchBar input{
+        max-width: 350px;
+    }
+    .accountMenu{
+        display: flex;
+    }
+    .accountMenu i{
+        display: none;
+    }
+    .accountMenu a{
+        display: block;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 /*desktop*/
 @media (min-width: 1280px){
+    .searchBar input{
+        width: 350px;
+    }
+    .accountMenu{
+        display: flex;
+    }
+    .accountMenu i{
+        display: none;
+    }
+    .accountMenu a{
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-weight: bold;
+    }
 }
