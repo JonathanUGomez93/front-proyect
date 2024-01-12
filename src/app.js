@@ -15,7 +15,7 @@ app.set("views", path.join(__dirname,"/views"))
 //Ruteo
 app.use("/", mainRouter);
 
-const PORT = 3030
+const PORT = 3000
 app.listen(PORT, () => {
     console.log(`ejecutando puerto ${PORT}`)
 })

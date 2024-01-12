@@ -1,0 +1,51 @@
+/* 
+titulos
+font-family: 'Playfair Display', serif;
+cuerpo
+font-family: 'Lato', sans-serif;
+*/
+/* mobile */
+.headerNav{
+    background-color: #4B0002;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+.logoNav{
+    width: 50px;
+    height: auto;
+}
+.searchButtonNav{
+    all: unset;
+    position: relative;
+    right: 25px;
+    z-index: 2;
+}
+.searchButtonNav i{
+    color: #4B0002;
+}
+.seccionesNav{
+    all: unset;
+    color: #fff;
+    display: none;
+}
+.carritoIcon{
+    color: #fff;
+    font-size: 1.3rem;
+    display: none;
+}
+.burgerMenu{
+    color: #fff;
+    font-size: 1.3rem;
+}
+/*media queries*/
+/*tablet*/
+@media (min-width: 520px){
+    
+}
+/*desktop*/
+@media (min-width: 1280px){
+    
+}

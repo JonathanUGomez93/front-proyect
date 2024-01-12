@@ -10,8 +10,13 @@ font-family: 'Lato', sans-serif;
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-
-/*media querys*/
+footer{
+    background-color: #4B0002;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/*media queries*/
 /*tablet*/
 @media (min-width: 520px){
     
