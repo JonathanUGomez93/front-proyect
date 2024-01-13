@@ -11,17 +11,54 @@ font-family: 'Lato', sans-serif;
     font-family: 'Lato', sans-serif;
 }
 footer{
-    background-color: #4B0002;
+    background-image: url('/images/biop.png');
+    background-position: center;
+    background-size: cover;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
+.footerDiv{
+    color: black;
+    text-align: center;
+}
+.infoStore{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footerTitle{
+    font-size: 1rem;
+    font-family: 'PlayFair display';
+}
+.infoFooter p{
+    font-family: 'Roboto';
+    font-size: 0.8rem;
+}
+.infoFooter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+}
+.infoFooter a{
+    all: unset;
+    cursor: pointer;
+}
+.copyrightFooter{
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
 /*media queries*/
 /*tablet*/
 @media (min-width: 520px){
-    
+    footer{
+        background-position: 0% 30%;
+    }
 }
 /*desktop*/
 @media (min-width: 1280px){
-    
+
 }

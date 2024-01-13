@@ -22,6 +22,7 @@ font-family: 'Lato', sans-serif;
     position: relative;
     right: 25px;
     z-index: 2;
+    background-color: #fff;
 }
 .searchButtonNav i{
     color: #4B0002;
@@ -43,9 +44,13 @@ font-family: 'Lato', sans-serif;
 /*media queries*/
 /*tablet*/
 @media (min-width: 520px){
-    
+    .burgerMenu{
+        display: none;
+    }
 }
 /*desktop*/
 @media (min-width: 1280px){
-    
+    .burgerMenu{
+        display: none;
+    }
 }
