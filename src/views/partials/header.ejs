@@ -1,13 +1,24 @@
 <header>
     <nav class="headerNav">
         <img class="logoNav" src="/images/logo.jpg" alt="logo de la tienda">
-        <form class="formNav">
-            <label for="busqueda"></label>
-            <input class="inputNav" type="search" id="busqueda" name="busqueda" placeholder="Busca la carta deseada">
-            <button class="searchButtonNav" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-        <a class="seccionesNav" href="">Secciones</a>
-        <a><i class="fa-solid fa-cart-shopping carritoIcon"></i></a>
-        <a href=""><i class="fa-solid fa-bars burgerMenu"></i></a>
+        <div>
+            <form class="formNav">
+                <label for="busqueda"></label>
+                <input class="inputNav" type="search" id="busqueda" name="busqueda" placeholder="Busca la carta deseada">
+                <button class="searchButtonNav" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="seccionesCart">
+            <div class="seccionesNav">
+                <button class="closeBurger seccion">Cerrar</button>
+                <a class="seccion seccionCarrito" href="">Mi Carrito</a>
+                <a class="seccion" href="">Sección</a>
+                <a class="seccion" href="">Sección</a>
+                <a class="seccion" href="">Sección</a>
+                <a class="seccion" href="">Sección</a>
+            </div>
+            <a><i class="fa-solid fa-cart-shopping carritoIcon"></i></a>
+            <button class="buttonBurgerMenu"><i class="fa-solid fa-bars burgerMenu"></i></button>
+        </div>
     </nav>
 </header>

@@ -6,16 +6,24 @@ font-family: 'Lato', sans-serif;
 */
 /* mobile */
 .headerNav{
-    background-color: #4B0002;
+    background-image: url('/images/navbi.png');
+    background-size: cover ;
+    background-position: 0% 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 25px;
     text-align: center;
+    flex-wrap: wrap;
 }
 .logoNav{
     width: 50px;
     height: auto;
+}
+.inputNav{
+    color: #000;
+    font-family: 'Roboto';
+    border-radius: 5px;
 }
 .searchButtonNav{
     all: unset;
@@ -25,32 +33,94 @@ font-family: 'Lato', sans-serif;
     background-color: #fff;
 }
 .searchButtonNav i{
-    color: #4B0002;
+    color: #000;
+}
+.seccionesCart{
+    display: flex;
+    justify-content: space-around;
 }
 .seccionesNav{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 2rem;
+    margin-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #b0b0b0;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+.closeBurger{
     all: unset;
-    color: #fff;
-    display: none;
+}
+.seccion{
+    all: unset;
+    color: #000;
+    font-family: 'Roboto';
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 .carritoIcon{
-    color: #fff;
-    font-size: 1.3rem;
+    color: #000;
+    font-size: 1.5rem;
     display: none;
+    cursor: pointer;
+}
+.buttonBurgerMenu{
+    all: unset;
 }
 .burgerMenu{
-    color: #fff;
-    font-size: 1.3rem;
+    color: #000;
+    font-size: 1.5rem;
+}
+.visibility{
+    visibility: visible;
 }
 /*media queries*/
 /*tablet*/
 @media (min-width: 520px){
-    .burgerMenu{
-        display: none;
+    .headerNav{
+        background-position: 0% 40%;
+    }
+    .inputNav{
+        width: 200px
     }
 }
 /*desktop*/
 @media (min-width: 1280px){
+    .headerNav{
+        background-position: 0% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .inputNav{
+        width: 300px;
+    }
+    .seccionesNav{
+        all: unset;
+        visibility: visible;
+    }
+    .seccion{
+        font-family: 'Roboto';
+        margin-left: 1rem;
+    }
+    .closeBurger{
+        visibility: hidden;
+    }
+    .carritoIcon{
+        display: block;
+        margin-left: 1rem;
+    }
     .burgerMenu{
-        display: none;
+        visibility: hidden;
+    }
+    .seccionCarrito{
+        visibility: hidden;
     }
 }
