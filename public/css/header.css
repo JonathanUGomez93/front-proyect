@@ -23,14 +23,24 @@ font-family: 'Lato', sans-serif;
 .inputNav{
     color: #000;
     font-family: 'Roboto';
+    padding: 5px;
     border-radius: 5px;
+    outline-color: #000;
+}
+.inputNav::placeholder{
+    padding: 5px;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; 
 }
 .searchButtonNav{
     all: unset;
     position: relative;
     right: 25px;
     z-index: 2;
-    background-color: #fff;
+    background-color: transparent;
 }
 .searchButtonNav i{
     color: #000;
@@ -109,6 +119,23 @@ font-family: 'Lato', sans-serif;
     .seccion{
         font-family: 'Roboto';
         margin-left: 1rem;
+        position: relative;
+    }
+    .seccion::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    .seccion:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
     .closeBurger{
         visibility: hidden;
@@ -116,6 +143,10 @@ font-family: 'Lato', sans-serif;
     .carritoIcon{
         display: block;
         margin-left: 1rem;
+        transition: transform 0.25s;
+    }
+    .carritoIcon:hover{
+        transform: scale(1.2);
     }
     .burgerMenu{
         visibility: hidden;
