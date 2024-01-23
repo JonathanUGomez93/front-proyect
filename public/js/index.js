@@ -1,28 +1,35 @@
 window.onload = function () {
-    const container = document.querySelector('#container')
+    const container = document.querySelector('.container')
         
-    const fetchCartas = () => {
+    const fetchTresCartas = () => {
         fetch("https://api.magicthegathering.io/v1/cards")
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            //acá va la lógica presentacional
-            const cards = data.cards;
-            console.log('array de cartas', cards)
-
+            const cards = [];
+            let count = 0;
+            for (let i = 0; i < data.cards.length; i++){
+                if (data.cards[i].imageUrl !== undefined && count < 3) {
+                    cards.push(data.cards[i])
+                    count++;
+                }
+                if (count === 3) {
+                    break;
+                }
+            }
+            console.log('cards luego del for' , cards)
+            
             cards.forEach((carta) => {
-                if (carta.imageUrl !== undefined) {
                     const img = document.createElement("img");
                     img.src = carta.imageUrl;
     
                     container.appendChild(img);
-                }
             });
         })
         .catch(function (error) {
             console.log(error)
         })
     }
-    fetchCartas()
+    // fetchTresCartas()
 };

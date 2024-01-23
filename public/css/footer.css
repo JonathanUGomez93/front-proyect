@@ -14,8 +14,6 @@ footer{
     background-image: url('/images/biop.png');
     background-position: center;
     background-size: cover;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 .footerDiv{
