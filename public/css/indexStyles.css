@@ -10,7 +10,44 @@ font-family: 'Lato', sans-serif;
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-
+.indexContainer{
+    width: 90%;
+    margin: auto;
+}
+.indexTitle{
+    text-align: center;
+    font-family: 'Playfair';
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.services{
+    height: 150px;
+    border-radius: 25px;
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+.servicesTitle{
+    background-color: rgba(176,176,176,.2);
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.servicesTitle h2{
+    font-family: 'PlayFair';
+}
+main{
+    width: 90%;
+    margin: auto;
+}
+section{
+    width: 90%;
+    margin: auto;
+}
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
