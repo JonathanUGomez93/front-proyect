@@ -31,5 +31,5 @@ window.onload = function () {
             console.log(error)
         })
     }
-    // fetchTresCartas()
+    fetchTresCartas()
 };

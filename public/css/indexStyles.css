@@ -36,9 +36,16 @@ font-family: 'Lato', sans-serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 .servicesTitle h2{
     font-family: 'PlayFair';
+    font-size: 1rem;
+}
+.servicesTitle p{
+    font-size: 0.9rem;
+    text-wrap: balance;
+    text-align: center;
 }
 main{
     width: 90%;
