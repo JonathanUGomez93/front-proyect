@@ -1,0 +1,15 @@
+.sectionsContainer{
+    min-height: 70vh;
+}
+.sectionsTitle{
+    font-family: 'Playfair'
+}
+/*media querys*/
+/*tablet*/
+@media (min-width: 520px){
+    
+}
+/*desktop*/
+@media (min-width: 1280px){
+    
+}

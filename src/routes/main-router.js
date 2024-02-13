@@ -5,6 +5,11 @@ const mainController = require("../controllers/main-controller")
 
 //Rutas
 router.get("/", mainController.index)
+router.get("/new", mainController.new)
+router.get("/featured", mainController.featured)
+router.get("/sale", mainController.sale)
+router.get("/contactUs", mainController.contact)
+router.get("/sealed", mainController.sealed)
 
 
 module.exports = router
