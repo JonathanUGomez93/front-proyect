@@ -1,6 +1,14 @@
+const db = require('../database/models/index');
+
 const controller = {
-    index: (req, res) => {
-        res.render("index")
+    index: async (req, res) => {
+        try {
+            const cards = await db.Card.findAll();
+            res.render("index", { cards: cards });
+        } catch (err) { 
+            console.log(err);
+            res.status(500).send('La cagaste weon')
+        }
     },
     new: (req, res) => {
         res.render("new")
@@ -18,5 +26,4 @@ const controller = {
         res.render("sealed")
     }
 }
-
 module.exports = controller
