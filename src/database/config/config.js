@@ -2,10 +2,10 @@ module.exports ={
   "development": {
     "username": "root",
     "password": "root",
-    "database": "database_development",
+    "database": "mtgsinglesdfe",
     "host": "localhost",
     "dialect": "mysql",
-    "port": 3000
+    "port": 3306
   },
   "test": {
     "username": "root",
