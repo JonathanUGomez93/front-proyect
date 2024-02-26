@@ -9,7 +9,33 @@
     <%- include('partials/header') %>
     <div class="sectionsContainer">
         <h1 class="sectionsTitle">Novedades</h1>
-        <h2>Aqui van las cartas</h2>
+        <p class="sectionsSubtitle">Accede a los mejores productos del mundo de los cartones mágicos. Los singles más bucados o los productos sellados del momento e incluso de colección.</p>
+        <div class="sectionsOptions">
+            <button class="sectionsOption active">Singles</button>
+            <button class="sectionsOption inactive">Sellado</button>
+        </div>
+        <div class="contentContainer">
+            <div class="contentFilters">
+                <p>Precio Máximo</p>
+                <p>Precio Mínimo</p>
+                <p>Color</p>
+                <p>Playset Disponible</p>
+                <p>palabra clave</p>
+            </div>
+            <div class="contentDisplay">
+                <div class="content">cartas</div>
+                <div class="content">cartas</div>
+                <div class="content">cartas</div>
+                <div class="content">cartas</div>
+                <div class="content">cartas</div>
+                <div class="content">cartas</div>
+            </div>
+        </div>
+        <div class="pagination">
+            <button class="page current">1</button>
+            <button class="page">2</button>
+            <button class="page">3</button>
+        </div>
     </div>
     <%- include('partials/footer') %>
 </body>
