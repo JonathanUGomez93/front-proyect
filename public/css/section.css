@@ -1,8 +1,71 @@
 .sectionsContainer{
     min-height: 70vh;
+    width: 90%;
+    margin: auto;
 }
 .sectionsTitle{
-    font-family: 'Playfair'
+    font-family: 'Playfair';
+    text-align: center;
+    margin-top: 1rem;
+}
+.sectionsSubtitle{
+    text-align: center;
+}
+.sectionsOptions{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Roboto';
+}
+.sectionsOption{
+    all: unset;
+    color: #000;
+    background-color: transparent;
+    border: 5px solid rgba(176,176,176,.2);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.active{
+    background-color: #b4b4b4;
+}
+.contentContainer{
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+.contentFilters{
+    width: 30%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.contentDisplay{
+    width: 70%;
+    border:  1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pagination{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.page{
+    margin-block: 2rem;
+    border: none;
+    background: transparent;
+    padding-inline: 10px;
+    font-family: 'Roboto';
+}
+.current{
+    background-color: #b4b4b4;
+    border-radius: 5px;
 }
 /*media querys*/
 /*tablet*/
