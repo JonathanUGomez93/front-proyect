@@ -53,16 +53,16 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Card = sequelize.define(alias,cols,config);
 
-    // Product.associate = function (models) {
-    //     Product.belongsTo(models.Technique, {
-    //         as: "technique",
-    //         foreignKey: "technique_id"
-    //     })
+    Card.associate = function (models) {
+        // Product.belongsTo(models.Technique, {
+        //     as: "technique",
+        //     foreignKey: "technique_id"
+        // })
 
-    //     Product.belongsTo(models.Artist, {
-    //         as: "artist",
-    //         foreignKey: 'artist_id',
-    //     })
-    // }
+        // Product.belongsTo(models.Artist, {
+        //     as: "artist",
+        //     foreignKey: 'artist_id',
+        // })
+    }
     return Card
 };

@@ -1,9 +1,9 @@
 //Requires
-const express = require("express")
-const path = require("path")
+const express = require("express");
+const path = require("path");
 const mainRouter = require("./routes/main-router")
 
-const app = express()
+const app = express();
 
 //Middlewares
 app.use(express.static(path.join(__dirname, "../public")))

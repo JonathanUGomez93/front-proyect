@@ -1,6 +1,8 @@
 //Requires
 const express = require("express")
 const router = express.Router()
+
+//Controladores
 const mainController = require("../controllers/main-controller")
 
 //Rutas
@@ -12,4 +14,4 @@ router.get("/contactUs", mainController.contact)
 router.get("/sealed", mainController.sealed)
 
 
-module.exports = router
+module.exports = router;

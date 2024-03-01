@@ -23,12 +23,11 @@
                 <p>palabra clave</p>
             </div>
             <div class="contentDisplay">
-                <div class="content">cartas</div>
-                <div class="content">cartas</div>
-                <div class="content">cartas</div>
-                <div class="content">cartas</div>
-                <div class="content">cartas</div>
-                <div class="content">cartas</div>
+                <% for( let i = 0; i < cards.length; i++ ) { %>
+                    <% if (cards[i].new == 1) { %>
+                        <img class="img1" src="<%= cards[i].front_img %>"/>
+                    <% } %>
+                <% } %>
             </div>
         </div>
         <div class="pagination">
