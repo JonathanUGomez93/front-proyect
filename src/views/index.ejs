@@ -20,15 +20,39 @@
     <main>
         <h3 class="indexTitle">Novedades</h3>
         <div>
-            <div class="container"></div>
+            <div class="container">
+                <% let newCount = 0 %>
+                <% for( let i = 0; i < cards.length; i++ ) { %>
+                    <% if (cards[i].new == 1 && newCount < 3) { %>
+                        <% newCount++ %>
+                        <img class="img1" src="<%= cards[i].front_img %>"/>
+                    <% } %>
+                <% } %>
+            </div>
         </div>
         <h3 class="indexTitle">Destacados</h3>
         <div>
-            <div class="container"></div>
+            <div class="container">
+                <% let featuredCount = 0 %>
+                <% for( let i = 0; i < cards.length; i++ ) { %>
+                    <% if (cards[i].featured == 1 && featuredCount < 3) { %>
+                        <% featuredCount++ %>
+                        <img class="img1" src="<%= cards[i].front_img %>"/>
+                    <% } %>
+                <% } %>
+            </div>
         </div>
         <h3 class="indexTitle">Ofertas</h3>
         <div>
-            <div class="container"></div>
+            <div class="container">
+                <% let onSaleCount = 0 %>
+                <% for( let i = 0; i < cards.length; i++ ) { %>
+                    <% if (cards[i].on_sale == 1 && onSaleCount < 3) { %>
+                        <% onSaleCount++ %>
+                        <img class="img1" src="<%= cards[i].front_img %>"/>
+                    <% } %>
+                <% } %>
+            </div>
         </div>
     </main>
     <section>
