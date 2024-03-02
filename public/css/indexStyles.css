@@ -10,15 +10,11 @@ font-family: 'Lato', sans-serif;
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-.indexContainer{
-    width: 90%;
-    margin: auto;
-}
 .indexTitle{
     text-align: center;
     font-family: 'Playfair';
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-block: 1rem;
+    padding-top: 1rem;
 }
 .services{
     height: 150px;
@@ -28,7 +24,7 @@ font-family: 'Lato', sans-serif;
     margin: auto;
 }
 .servicesTitle{
-    background-color: rgba(176,176,176,.2);
+    border: 1px solid #b4b4b4;
     width: 45%;
     height: 100%;
     margin: auto;
@@ -47,13 +43,46 @@ font-family: 'Lato', sans-serif;
     text-wrap: balance;
     text-align: center;
 }
-main{
-    width: 90%;
-    margin: auto;
-}
 section{
     width: 90%;
     margin: auto;
+}
+.sectionContainer{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+.plains{
+    background-image: url('/images/plains.png');
+}
+.mountain{
+    background-image: url('/images/mountain.png');
+}
+.swamp{
+    background-image: url('/images/swamp.png');
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.container img{
+    width: 30%;
+    height: auto;
+    margin-inline: 5px;
+}
+.indexButton{
+    all: unset;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-family: 'Lobster';
+    margin-block: 1rem;
+    text-align: center;
+    width: 30%;
+    padding-block: 5px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
 }
 /*media querys*/
 /*tablet*/
