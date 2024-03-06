@@ -54,12 +54,15 @@ section{
 }
 .plains{
     background-image: url('/images/plains.png');
+    background-size: cover;
 }
 .mountain{
     background-image: url('/images/mountain.png');
+    background-size: cover;
 }
 .swamp{
     background-image: url('/images/swamp.png');
+    background-size: cover;
 }
 .container{
     display: flex;
@@ -131,6 +134,43 @@ hr{
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
+    .servicesTitle{
+        transition: all 0.5s;
+    }
+    .servicesTitle:hover{
+        box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.8);-webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.8);-moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.8);
+    }
+    .servicesTitle h2{
+        font-size: 1.5rem;
+    }
+    .servicesTitle p{
+        font-size: 1rem;
+    }
+    .mountain{
+        background-size:contain;
+    }
+    .sectionContainer h3{
+        font-size: 1.8rem;
+    }
+    .container{
+        position: relative;
+    }
+    .img1{
+        transition: all 0.5s;
+    }
+    .img1:hover{
+        scale:  1.1;
+        z-index: 3;
+    }
+    .indexButton{
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        transition: all 0.5s;
+    }
+    .indexButton:hover{
+        background-color: #000;
+        color: #fff;
+    }
     .paymentIcon p{
         text-align: center;
         visibility: hidden;
@@ -139,5 +179,31 @@ hr{
 }
 /*desktop*/
 @media (min-width: 1280px){
-    
+    .services{
+        margin-block: 3rem;
+    }
+    .servicesTitle{
+        width: 30%;
+    }
+    .container img{
+        width: 20%;
+        height: auto;
+    }
+    .indexButton{
+        width: 20%;
+    }
+    .payment h4{
+        font-size: 2rem;
+    }
+    .paymentContainer{
+        width: 50%;
+        margin-inline: auto;
+        margin-top: 3rem;
+    }
+    .paymentIcon i{
+        font-size: 3rem;
+    }
+    .paymentIcon p{
+        font-size: 1.3rem;
+    }
 }
