@@ -10,22 +10,40 @@
     <div class="sectionsContainer">
         <h1 class="sectionsTitle">Novedades</h1>
         <p class="sectionsSubtitle">Accede a los mejores productos del mundo de los cartones mágicos. Los singles más bucados o los productos sellados del momento e incluso de colección.</p>
-        <div class="sectionsOptions">
-            <button class="sectionsOption active">Singles</button>
-            <button class="sectionsOption inactive">Sellado</button>
-        </div>
         <div class="contentContainer">
             <div class="contentFilters">
-                <p>Precio Máximo</p>
-                <p>Precio Mínimo</p>
-                <p>Color</p>
-                <p>Playset Disponible</p>
-                <p>palabra clave</p>
+                <div class="filter priceRange">
+                    <div class="lowerPrice">
+                        <p class="filterP">Precio mínimo</p>
+                        <input type="number" id="precioMinimo" value="0" min="0" max="499">
+                    </div>
+                    <div>
+                        <p class="filterP">Precio máximo</p>
+                        <input type="number" id="precioMaximo" value="500" min="1" max="500">
+                    </div>
+                </div>
+                <div class="filter">
+                    <p class="filterP">Colores</p>
+                    <div class="colors">
+                        <img src="/images/u.png" alt="">
+                        <img src="/images/b.png" alt="">
+                        <img src="/images/g.png" alt="">
+                        <img src="/images/red.png" alt="">
+                        <img src="/images/W.png" alt="">
+                        <img src="/images/c.png" alt="">
+                    </div>
+                </div>
+                <div class="filter">
+                    <input type="search" id="busquedaSection" name="busquedaSection" placeholder="Palabra Clave">
+                </div>
+                <button class="buttonFilters">Aplicar Filtros</button>
             </div>
             <div class="contentDisplay">
                 <% for( let i = 0; i < cards.length; i++ ) { %>
                     <% if (cards[i].new == 1) { %>
-                        <img class="img1" src="<%= cards[i].front_img %>"/>
+                        <a href="/productdetail/<%= cards[i].id %>">
+                            <img class="img1" src="<%= cards[i].front_img %>"/>
+                        </a>
                     <% } %>
                 <% } %>
             </div>
