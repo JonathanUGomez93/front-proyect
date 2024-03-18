@@ -42,6 +42,16 @@ const controller = {
     },
     sealed: (req, res) => {
         res.render("sealed")
+    },
+    detail: async (req, res) => {
+        try {
+            let cards = await db.Card.findByPk(req.params.id)
+                
+            res.render('productDetail', { cards: cards });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor.');
+        }
     }
 };
 module.exports = controller
