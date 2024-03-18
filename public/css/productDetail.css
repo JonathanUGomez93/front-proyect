@@ -1,0 +1,45 @@
+/* 
+titulos
+font-family: 'Playfair Display', serif;
+cuerpo
+font-family: 'Lato', sans-serif;
+*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+main{
+    width: 90%;
+    margin-inline: auto;
+}
+h1{
+    font-family: 'Playfair';
+}
+.cardContainer{
+    width: 50%;
+    margin-inline: auto;
+    text-align: center;
+}
+.cardContainer .cardPrice{
+    text-align: end;
+}
+.cardStock{
+    text-align: start;
+}
+.cardStock span{
+    color: blue;
+}
+.cardContainer img{
+    width: 100%;
+}
+/*media querys*/
+/*tablet*/
+@media (min-width: 520px){
+
+}
+/*desktop*/
+@media (min-width: 1280px){
+
+}

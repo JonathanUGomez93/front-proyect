@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <!-- scripts -->
+    <script src="/js/detail.js" defer></script>
+    <title><%= cards.title %> - MTG DFE</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1><%= cards.title %></h1>
+        <div class="cardContainer">
+            <p class="cardPrice">$<%= cards.price %></p>
+            <img src="<%= cards.front_img %>" alt="Carta Magic"/>
+            <p class="cardStock">Disponible: <span><%= cards.stock %> unidades</span></p>
+            <p><%= cards.cost %></p>
+            <p><%= cards.effect %></p>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

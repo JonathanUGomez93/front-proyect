@@ -73,6 +73,9 @@ section{
     height: auto;
     margin-inline: 5px;
 }
+.linker{
+    all: unset;
+}
 .indexButton{
     all: unset;
     background-color: #fff;
