@@ -37,6 +37,7 @@
 }
 .filter input{
     margin-block: 0.5rem;
+    width: 90%;
 }
 .priceRange{
     display: flex;

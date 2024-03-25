@@ -13,10 +13,18 @@
         <h1><%= cards.title %></h1>
         <div class="cardContainer">
             <p class="cardPrice">$<%= cards.price %></p>
-            <img src="<%= cards.front_img %>" alt="Carta Magic"/>
-            <p class="cardStock">Disponible: <span><%= cards.stock %> unidades</span></p>
-            <p><%= cards.cost %></p>
-            <p><%= cards.effect %></p>
+            <div class="cardInfoContainer">
+                <div class="cardInfoContainerImg">
+                    <img src="<%= cards.front_img %>" alt="Carta Magic"/>
+                </div>
+                <div class="cardInfoContainerText">
+                    <button class="addToCart buttonMobile">Agregar al carrito</button>
+                    <p class="cardInfo">Disponible: <span><%= cards.stock %> unidades</span></p>
+                    <p class="cardInfo">Cast: <span><%= cards.cost %></span></p>
+                    <p class="cardInfo">Efecto: <i>"<%= cards.effect %>"</i></p>
+                    <button class="addToCart buttonDesktop">Agregar al carrito</button>
+                </div>
+            </div>
         </div>
     </main>
     <%- include('partials/footer') %>

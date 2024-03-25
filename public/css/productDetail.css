@@ -16,30 +16,82 @@ main{
 }
 h1{
     font-family: 'Playfair';
+    margin-bottom: 2rem;
 }
 .cardContainer{
     width: 50%;
     margin-inline: auto;
     text-align: center;
 }
+.cardContainer p{
+    font-family: 'Roboto';
+}
 .cardContainer .cardPrice{
     text-align: end;
+    font-size: 1.5rem;
 }
-.cardStock{
+.addToCart{
+    all: unset;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-family: 'Lobster';
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    padding-block: 5px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+}
+.buttonDesktop{
+    display: none;
+}
+.cardInfo{
+    width: 100%;
     text-align: start;
 }
-.cardStock span{
-    color: blue;
+.cardInfo span{
+    font-family: 'Roboto';
 }
 .cardContainer img{
     width: 100%;
+    margin-bottom: 1rem;
 }
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
-
+    .addToCart{
+        width: 70%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        transition: all 0.5s;
+    }
+    .addToCart:hover{
+        background-color: #000;
+        color: #fff;
+    }
 }
 /*desktop*/
 @media (min-width: 1280px){
-
+    .cardContainer{
+        margin-bottom: 2rem;
+    }
+    .cardInfoContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .cardInfoContainerImg{
+        width: 50%;
+    }
+    .cardInfoContainerText{
+        width: 40%;
+    }
+    .buttonDesktop{
+        display: block;
+    }
+    .buttonMobile{
+        display: none;
+    }
 }
