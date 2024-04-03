@@ -76,6 +76,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
     letter-spacing: 1px;
     margin-bottom: 1rem;
 }
+.carritoIconA{
+    all: unset;
+}
 .carritoIcon{
     color: #000;
     font-size: 1.5rem;
