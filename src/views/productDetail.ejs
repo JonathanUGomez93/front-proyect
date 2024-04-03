@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('partials/head') %>
-    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/productDetail.css" defer>
     <!-- scripts -->
     <script src="/js/detail.js" defer></script>
     <title><%= cards.title %> - MTG DFE</title>
@@ -10,16 +10,22 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <h1><%= cards.title %></h1>
+        <h1 class="cardTitle"><%= cards.title %></h1>
         <div class="cardContainer">
             <p class="cardPrice">$<%= cards.price %></p>
             <div class="cardInfoContainer">
                 <div class="cardInfoContainerImg">
-                    <img src="<%= cards.front_img %>" alt="Carta Magic"/>
+                    <img class="cardImg" src="<%= cards.front_img %>" alt="Carta Magic"/>
                 </div>
                 <div class="cardInfoContainerText">
+                    <div class="quantityContainer">
+                        <button class="quantityMore">+</button>
+                        <label class="quantityLabel" for="quantity" id="quantity"></label>
+                        <input class="quantity" type="text" name="quantity" id="quantity" value='1' readonly>
+                        <button class="quantityLess">-</button>
+                    </div>
                     <button class="addToCart buttonMobile">Agregar al carrito</button>
-                    <p class="cardInfo">Disponible: <span><%= cards.stock %> unidades</span></p>
+                    <p class="cardInfo">Disponible: <span class="stock"><%= cards.stock %></span> unidades</p>
                     <p class="cardInfo">Cast: <span><%= cards.cost %></span></p>
                     <p class="cardInfo">Efecto: <i>"<%= cards.effect %>"</i></p>
                     <button class="addToCart buttonDesktop">Agregar al carrito</button>
