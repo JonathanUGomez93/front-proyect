@@ -62,15 +62,6 @@ const controller = {
             console.error(error);
             res.status(500).send('Error interno del servidor.');
         }
-    },
-    // list: async (req, res) => {
-    //     try {
-    //         let cards = await db.Card.findAll();
-    //         res.render('productList', { cards: cards });
-    //     } catch (error) {
-    //         console.error(error);
-    //         res.status(500).send('Error interno del servidor.');
-    //     }
-    // },
+    }
 };
 module.exports = controller

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const stock = document.querySelector('.stock');
 
     quantityMore.addEventListener('click', function () {
-        if (quantityInput.value < stock.textContent) {
+        if (quantityInput.value < parseInt(stock.textContent)) {
             quantityInput.value++
         }
     })
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     buttonDesktop.forEach(function (item) {
         item.addEventListener('click', function () {
-            this.style.backgroundColor = 'red';
 
             let cart = JSON.parse(sessionStorage.getItem('cart'));
             if (!cart) {
@@ -40,16 +39,30 @@ document.addEventListener('DOMContentLoaded', async function () {
             const urlParts = cardIdUrl.split("/");
             const cardId = urlParts[urlParts.length - 1];
             const cardQuantity = quantityInput.value;
+            //selecciono el precio de la carta
+            const cardPriceSelect = document.querySelector(".cardPriceSpan");
+            const cardPrice = cardPriceSelect.textContent;
 
             let addedCard =
             {
                 id: cardId,
                 title: cardTitle,
                 img: cardImg,
-                quantity: cardQuantity
+                quantity: cardQuantity,
+                price: cardPrice
+            }
+
+            const existingItem = cart.find(existing => existing.id === addedCard.id);
+
+            if (existingItem) {
+                // Actualiza la cantidad sumando la nueva cantidad
+                existingItem.quantity = (parseInt(existingItem.quantity) + parseInt(addedCard.quantity)).toString();
+            } else {
+                // Si el objeto no existe, agrégalo al carrito
+                cart.push(addedCard);
             }
             
-            cart.push(addedCard)
+            //cart.push(addedCard)
             const cartJSON = JSON.stringify(cart);
             sessionStorage.setItem("cart", cartJSON);
 
