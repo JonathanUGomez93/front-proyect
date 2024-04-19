@@ -12,36 +12,23 @@ document.addEventListener('DOMContentLoaded', async function () {
         carrito.forEach((item, index) => {
             // Crear div de producto individual
             const itemContainer = document.createElement('div');
+            itemContainer.classList.add('itemContainer')
             container.appendChild(itemContainer);
-    
-            // Título de los productos
-            const itemTitle = document.createElement('p');
-            itemTitle.textContent = item.title;
-            itemContainer.appendChild(itemTitle);
-    
-            // Imágenes de los productos
-            const itemImage = document.createElement('img');
-            itemImage.src = item.img;
-            itemContainer.appendChild(itemImage);
-    
-            // Cantidad de productos
-            const itemQuantity = document.createElement('p');
-            itemQuantity.textContent = item.quantity;
-            itemContainer.appendChild(itemQuantity);
-    
-            // Precio unitario de los productos
-            const itemPrice = document.createElement('p');
-            itemPrice.textContent = item.price;
-            itemContainer.appendChild(itemPrice);
-    
-            // Precio total de cada producto
-            const itemTotal = document.createElement('p');
-            itemTotal.textContent = item.price * item.quantity;
-            itemContainer.appendChild(itemTotal);
-    
+
+            //div button&Image
+            const buttonImage = document.createElement('div');
+            buttonImage.classList.add('buttonNImage')
+            itemContainer.appendChild(buttonImage);
+
+            //div boton eliminar
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('buttonContainer')
+            buttonImage.appendChild(buttonContainer);
+
             // Botón para eliminar el producto del carrito
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'X';
+            removeBtn.classList.add('removeBtn');
             removeBtn.addEventListener('click', function () {
                 // Eliminar el item del carrito
                 carrito = carrito.filter((_, itemIndex) => itemIndex !== index);
@@ -52,7 +39,42 @@ document.addEventListener('DOMContentLoaded', async function () {
                 
                 displayCart();
             });
-            itemContainer.appendChild(removeBtn);
+            buttonContainer.appendChild(removeBtn);
+            
+            // Imágenes de los productos
+            const itemImage = document.createElement('img');
+            itemImage.src = item.img;
+            itemImage.classList.add('itemImage')
+            buttonImage.appendChild(itemImage);            
+            
+            //infoContainer div
+            const infoContainer = document.createElement('div');
+            infoContainer.classList.add('infoContainer')
+            itemContainer.appendChild(infoContainer);
+            
+            // Título de los productos
+            const itemTitle = document.createElement('p');
+            itemTitle.textContent = `Carta: ${item.title}`;
+            itemTitle.classList.add('itemTitle')
+            infoContainer.appendChild(itemTitle);
+    
+            // Cantidad de productos
+            const itemQuantity = document.createElement('p');
+            itemQuantity.textContent =`Cantidad: ${ item.quantity }`;
+            itemQuantity.classList.add('itemQuantity')
+            infoContainer.appendChild(itemQuantity);
+    
+            // Precio unitario de los productos
+            const itemPrice = document.createElement('p');
+            itemPrice.textContent =`Precio Unitario: $${item.price}`;
+            itemPrice.classList.add('itemPrice')
+            infoContainer.appendChild(itemPrice);
+    
+            // Precio total de cada producto
+            const itemTotal = document.createElement('p');
+            itemTotal.textContent =`Precio Total: $${ item.price * item.quantity}`;
+            itemTotal.classList.add('itemTotal')
+            infoContainer.appendChild(itemTotal);
         });
     };
     displayCart()
