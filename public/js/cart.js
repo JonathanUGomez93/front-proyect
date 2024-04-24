@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
     //llamo a cart del sessionStorage metiendolo en variable carrito
     let carrito = JSON.parse(sessionStorage.getItem('cart')) || [];
-    console.log('carrito inicial',carrito)
 
     const container = document.querySelector('.container');
 
@@ -78,4 +77,18 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     };
     displayCart()
+
+    //Calculo Total a Pagar
+    const totalPayment = document.querySelector('.totalPayment')
+    const totalPaymentP = document.createElement('p')
+
+    let totalAcumulado = 0;
+
+    carrito.forEach(item => {
+        let precioTotalItem = item.price * item.quantity;
+        totalAcumulado += precioTotalItem;
+    });
+    
+    totalPaymentP.textContent = `Total A Pagar: $${totalAcumulado}`;
+    totalPayment.appendChild(totalPaymentP)
 })
