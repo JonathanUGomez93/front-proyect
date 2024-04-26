@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/section.css">
+    <title>Destacados - MTG DFE</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="sectionsContainer">
+        <h1 class="sectionsTitle">Destacado</h1>
+        <p class="sectionsSubtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, sit error quas tenetur, consectetur quod nostrum at sunt omnis cum, harum nobis! Similique, repudiandae at placeat totam a mollitia natus!</p>
+        <div class="contentContainer">
+            <div class="contentFilters">
+                <div class="filter priceRange">
+                    <div class="lowerPrice">
+                        <p class="filterP">Precio mínimo</p>
+                        <input type="number" id="precioMinimo" value="0" min="0" max="499">
+                    </div>
+                    <div>
+                        <p class="filterP">Precio máximo</p>
+                        <input type="number" id="precioMaximo" value="500" min="1" max="500">
+                    </div>
+                </div>
+                <div class="filter">
+                    <p class="filterP">Colores</p>
+                    <div class="colors">
+                        <img src="/images/u.png" alt="">
+                        <img src="/images/b.png" alt="">
+                        <img src="/images/g.png" alt="">
+                        <img src="/images/red.png" alt="">
+                        <img src="/images/W.png" alt="">
+                        <img src="/images/c.png" alt="">
+                    </div>
+                </div>
+                <div class="filter">
+                    <input type="search" id="busquedaSection" name="busquedaSection" placeholder="Palabra Clave">
+                </div>
+                <button class="buttonFilters">Aplicar Filtros</button>
+            </div>
+            <div class="contentDisplay">
+                <% for( let i = 0; i < cards.length; i++ ) { %>
+                    <% if (cards[i].featured == 1) { %>
+                        <a href="/productdetail/<%= cards[i].id %>">
+                            <img class="img1" src="<%= cards[i].front_img %>"/>
+                        </a>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+        <div class="pagination">
+            <button class="page current">1</button>
+            <button class="page">2</button>
+            <button class="page">3</button>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>
