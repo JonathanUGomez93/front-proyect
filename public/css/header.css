@@ -105,8 +105,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
     font-size: 1.2rem;
 }
 .dropdownOptionContainer{
-    display: none;
     visibility: hidden;
+}
+.dropdownOptionVisibility{
+    visibility: visible;
 }
 .dropdownStyles a{
     all: unset;
@@ -116,10 +118,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
     font-family: 'Roboto';
     color: #fff;
     background-color: #252424;
-}
-.dropdownOptionVisibility{
-    display: block;
-    visibility: visible;
 }
 .dropdownStyles{
     display: flex;
