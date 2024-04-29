@@ -40,11 +40,9 @@
             </div>
             <div class="contentDisplay">
                 <% for( let i = 0; i < cards.length; i++ ) { %>
-                    <% if (cards[i].featured == 1) { %>
                         <a href="/productdetail/<%= cards[i].id %>">
                             <img class="img1" src="<%= cards[i].front_img %>"/>
                         </a>
-                    <% } %>
                 <% } %>
             </div>
         </div>
