@@ -14,6 +14,10 @@ router.get("/contactUs", mainController.contact)
 router.get("/sealed", mainController.sealed)
 router.get("/productdetail/:id", mainController.detail)
 router.get("/cart", mainController.cart)
+router.get("/allCards", mainController.allCards)
+router.get("/sealed", mainController.sealed)
+router.get("/sealed/commander", mainController.commander)
+router.get("/sealed/modern", mainController.modern)
 
 
 module.exports = router;

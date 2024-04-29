@@ -37,11 +37,44 @@ const controller = {
             res.status(500).send('La cagaste weon')
         }
     },
+    allCards: async (req, res) => {
+        try {
+            let cards = await db.Card.findAll();
+            res.render("allCards", { cards: cards });
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('La cagaste weon')
+        }
+    },
     contact: (req, res) => {
         res.render("contact")
     },
-    sealed: (req, res) => {
-        res.render("sealed")
+    sealed: async (req, res) => {
+        try {
+            let sealed = await db.Sealed.findAll();
+            res.render("sealed", { sealed: sealed });
+        } catch (err) {
+            console.log(err);
+            res.status(505).send('La cagaste weon')
+        }
+    },
+    commander: async (req, res) => {
+        try {
+            let sealed = await db.Sealed.findAll();
+            res.render("commander", { sealed: sealed });
+        } catch (err) {
+            console.log(err);
+            res.status(505).send('La cagaste weon')
+        }
+    },
+    modern: async (req, res) => {
+        try {
+            let sealed = await db.Sealed.findAll();
+            res.render("modern", { sealed: sealed });
+        } catch (err) {
+            console.log(err);
+            res.status(505).send('La cagaste weon')
+        }
     },
     detail: async (req, res) => {
         try {

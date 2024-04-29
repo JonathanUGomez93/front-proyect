@@ -34,6 +34,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false
         },
+        commander: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false
+        },
+        modern: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false
+        },
         img: {
             type: dataTypes.STRING(255),
             allowNull: false
@@ -41,9 +49,20 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: false,
-        tableName: 'cards'
+        tableName: 'sealed'
     }
     const Sealed = sequelize.define(alias, cols, config);
-    
+
+    Sealed.associate = function (models) {
+        // Product.belongsTo(models.Technique, {
+        //     as: "technique",
+        //     foreignKey: "technique_id"
+        // })
+
+        // Product.belongsTo(models.Artist, {
+        //     as: "artist",
+        //     foreignKey: 'artist_id',
+        // })
+    }
     return Sealed
 };
