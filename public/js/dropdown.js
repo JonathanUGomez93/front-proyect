@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     dropdownButton.addEventListener('click', () => {
         dropdownOptionContainer.classList.toggle('dropdownOptionVisibility');
-        dropdownOptionContainer.classList.toggle('dropdownOptionContainer');
+        dropdownOptionContainer.classList.toggle
+        ('dropdownOptionContainer');
     })
     dropdownSealed.addEventListener('click', () => {
         sealedOptions.classList.toggle('dropdownOptionVisibility');

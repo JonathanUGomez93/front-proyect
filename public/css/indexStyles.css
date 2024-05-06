@@ -43,6 +43,20 @@ font-family: 'Lato', sans-serif;
     text-wrap: balance;
     text-align: center;
 }
+.buylistLink{
+    text-align: center;
+}
+.buylistLink h4{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    margin-block: 1rem;
+}
+.buylistLink a{
+    all: unset;
+    cursor: pointer;
+    font-family: 'PlayFair';
+    color: blue;
+}
 section{
     width: 90%;
     margin: auto;
@@ -187,6 +201,13 @@ hr{
     }
     .servicesTitle{
         width: 30%;
+    }
+    .buylistLink h4{
+        font-size: 1.1rem;
+        margin-block: 1.5rem;
+    }
+    .buylistLink a{
+        font-size: 1.2rem;
     }
     .container img{
         width: 20%;
