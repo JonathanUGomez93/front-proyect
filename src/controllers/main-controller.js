@@ -95,6 +95,14 @@ const controller = {
             console.error(error);
             res.status(500).send('Error interno del servidor.');
         }
+    },
+    test: async (req, res) => {
+        try {
+            res.render('test');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor.');
+        }
     }
 };
 module.exports = controller

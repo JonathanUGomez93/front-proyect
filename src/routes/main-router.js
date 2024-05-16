@@ -18,6 +18,9 @@ router.get("/allCards", mainController.allCards)
 router.get("/sealed", mainController.sealed)
 router.get("/sealed/commander", mainController.commander)
 router.get("/sealed/modern", mainController.modern)
+router.get("/test", mainController.test)
 
+const apiRouter = require('./api/index')
+router.use("/api", apiRouter)
 
 module.exports = router;
