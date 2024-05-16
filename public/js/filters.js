@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', async function () { 
+    //fetch
+    const data = await fetch('/api/test')
+    const cards = await data.json()
+
+    const contentDisplay = document.querySelector('.contentDisplay')
+
     const minPrice = document.getElementById('precioMinimo')
     const maxPrice = document.getElementById('precioMaximo')
     const applyFilters = document.getElementById('buttonFilters')
@@ -11,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (isNaN(value)) {
             e.target.value = "";
         } else if (value <= 0) {
-            e.target.value = "1";
+            e.target.value = "0";
         } else if (value > 499) {
             e.target.value = "499";
         }
@@ -38,9 +44,31 @@ document.addEventListener('DOMContentLoaded', async function () {
         inputValue = event.target.value;
     });
 
+    function buscarCartas(cards, palabraClave) {
+        // contentDisplay.innerHTML = "";
+        const cartasEncontradas = [];
+        const palabraClaveMayuscula = palabraClave.toUpperCase();
+      
+        for (const carta of cards) {
+          const titulo = carta.title.toUpperCase();
+          if (titulo.includes(palabraClaveMayuscula)) {
+            cartasEncontradas.push(carta);
+          }
+        }
+        // for (const carta of cards) {
+        //     const titulo = carta.title.toUpperCase();
+        //     if (titulo.includes(palabraClaveMayuscula)) {
+        //       if (carta.price <= minPrice && carta.price >= maxPrice) {
+        //         cartasEncontradas.push(carta);
+        //       }
+        //     }
+        //   }
+        return cartasEncontradas;
+    }
+      
     applyFilters.addEventListener('click', () => {
-        const minPriceValue = minPrice.value;
-        const maxPriceValue = maxPrice.value;
+        const minPriceValue = parseFloat(minPrice.value);
+        const maxPriceValue = parseFloat(maxPrice.value);
         const activeImages = document.querySelectorAll('.activeColors');
         const keyWordValue = keyword.value;
     
@@ -50,7 +78,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         activeImages.forEach((button, index) => {
             console.log(`Color ${index + 1}`, button.id);
         });
+
+      const cartasEncontradas = buscarCartas(cards, keyWordValue);
+      console.log('Cartas encontradas:', cartasEncontradas);
     });
 })
-
-//PREGUNTAR A LA IA COMO PONER LO QUE HAY EN CONTENT DISPLAY PARA QUE LO HAGA MI CONTROLADOR. Y GG IZI.
