@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const applyFilters = document.getElementById('buttonFilters')
     const colores = document.querySelectorAll('.color')
     const keyword = document.querySelector('#busquedaSection')
-    let inputValue = '';
+    let inputValue = "";
 
     minPrice.addEventListener('input', function (e) {
         let value = parseInt(e.target.value);
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         inputValue = event.target.value;
     });
 
-    function buscarCartas(cards, palabraClave) {
+    function buscarCartas(cards) {
         // contentDisplay.innerHTML = "";
         const cartasEncontradas = [];
-        const palabraClaveMayuscula = palabraClave.toUpperCase();
+        const palabraClaveMayuscula = keyword.value.toUpperCase();
       
         for (const carta of cards) {
           const titulo = carta.title.toUpperCase();
@@ -65,8 +65,23 @@ document.addEventListener('DOMContentLoaded', async function () {
         //   }
         return cartasEncontradas;
     }
+
+    // const captureFiltersValue = () => {
+    //     const minPriceValue = parseFloat(minPrice.value);
+    //     const maxPriceValue = parseFloat(maxPrice.value);
+    //     const activeImages = document.querySelectorAll('.activeColors');
+    //     const keyWordValue = keyword.value;
+    
+    //     console.log('Precio Minimo', minPriceValue)
+    //     console.log('Precio Maximo', maxPriceValue)
+    //     console.log('Keyword', keyWordValue)
+    //     activeImages.forEach((button, index) => {
+    //         console.log(`Color ${index + 1}`, button.id);
+    //     });
+    // }
       
     applyFilters.addEventListener('click', () => {
+        // captureFiltersValue()
         const minPriceValue = parseFloat(minPrice.value);
         const maxPriceValue = parseFloat(maxPrice.value);
         const activeImages = document.querySelectorAll('.activeColors');
@@ -79,7 +94,17 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log(`Color ${index + 1}`, button.id);
         });
 
-      const cartasEncontradas = buscarCartas(cards, keyWordValue);
-      console.log('Cartas encontradas:', cartasEncontradas);
+        const cartasEncontradas = buscarCartas(cards);
+        console.log('Cartas encontradas:', cartasEncontradas);
+
+            // Filtrar las cartas según el precio
+        const cartasFiltradas = [];
+        for (const carta of cartasEncontradas) {
+            if (carta.price >= minPriceValue && carta.price <= maxPriceValue) {
+                cartasFiltradas.push(carta);
+            }
+        }
+
+    console.log('Cartas encontradas (filtradas por precio):', cartasFiltradas);
     });
 })
