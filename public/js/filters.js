@@ -4,13 +4,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     const cards = await data.json()
 
     const contentDisplay = document.querySelector('.contentDisplay')
-
     const minPrice = document.getElementById('precioMinimo')
     const maxPrice = document.getElementById('precioMaximo')
     const applyFilters = document.getElementById('buttonFilters')
     const colores = document.querySelectorAll('.color')
     const keyword = document.querySelector('#busquedaSection')
     let inputValue = "";
+
+    const cartasValidas = [];
 
     minPrice.addEventListener('input', function (e) {
         let value = parseInt(e.target.value);
@@ -55,30 +56,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             cartasEncontradas.push(carta);
           }
         }
-        // for (const carta of cards) {
-        //     const titulo = carta.title.toUpperCase();
-        //     if (titulo.includes(palabraClaveMayuscula)) {
-        //       if (carta.price <= minPrice && carta.price >= maxPrice) {
-        //         cartasEncontradas.push(carta);
-        //       }
-        //     }
-        //   }
         return cartasEncontradas;
     }
-
-    // const captureFiltersValue = () => {
-    //     const minPriceValue = parseFloat(minPrice.value);
-    //     const maxPriceValue = parseFloat(maxPrice.value);
-    //     const activeImages = document.querySelectorAll('.activeColors');
-    //     const keyWordValue = keyword.value;
-    
-    //     console.log('Precio Minimo', minPriceValue)
-    //     console.log('Precio Maximo', maxPriceValue)
-    //     console.log('Keyword', keyWordValue)
-    //     activeImages.forEach((button, index) => {
-    //         console.log(`Color ${index + 1}`, button.id);
-    //     });
-    // }
       
     applyFilters.addEventListener('click', () => {
         // captureFiltersValue()
@@ -104,7 +83,22 @@ document.addEventListener('DOMContentLoaded', async function () {
                 cartasFiltradas.push(carta);
             }
         }
-
-    console.log('Cartas encontradas (filtradas por precio):', cartasFiltradas);
+        
+            //filtro por colores y movimiento al array definitivo
+        for (const carta of cartasFiltradas) {
+            let colorCoincide = false;
+            
+            for (const button of activeImages) {
+                const colorActivo = button.id;
+                if (carta.colors.includes(colorActivo)) {
+                    colorCoincide = true;
+                    break; 
+                }
+            }
+            if (colorCoincide) {
+                cartasValidas.push(carta);
+            }
+        }
+        console.log('Cartas válidas:', cartasValidas);
     });
 })

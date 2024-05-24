@@ -45,6 +45,10 @@ module.exports = (sequelize, dataTypes) => {
         flip_img: {
             type: dataTypes.STRING(255),
             allowNull: false
+        },
+        colors: {
+            type: dataTypes.STRING(255),
+            allowNull: false
         }
     };
     let config = {
