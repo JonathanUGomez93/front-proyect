@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', async function () { 
-    //fetch
     const data = await fetch('/api/test')
     const cards = await data.json()
 
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     function buscarCartas(cards) {
-        // contentDisplay.innerHTML = "";
         const cartasEncontradas = [];
         const palabraClaveMayuscula = keyword.value.toUpperCase();
       
@@ -58,20 +56,25 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
         return cartasEncontradas;
     }
-      
+
+    const displayFilteredCards = () => {
+        contentDisplay.innerHTML = "";
+        for (let i = 0; i < cartasValidas.length; i++) {
+            const toProductLink = document.createElement('a');
+            toProductLink.href = `/productDetail/${cartasValidas[i].id}`
+            const imgTag = document.createElement('img');
+            imgTag.src = cartasValidas[i].front_img;
+            imgTag.className = "img1";
+            toProductLink.appendChild(imgTag);
+            contentDisplay.appendChild(toProductLink);
+        }
+    }
+    
     applyFilters.addEventListener('click', () => {
-        // captureFiltersValue()
         const minPriceValue = parseFloat(minPrice.value);
         const maxPriceValue = parseFloat(maxPrice.value);
         const activeImages = document.querySelectorAll('.activeColors');
         const keyWordValue = keyword.value;
-    
-        console.log('Precio Minimo', minPriceValue)
-        console.log('Precio Maximo', maxPriceValue)
-        console.log('Keyword', keyWordValue)
-        activeImages.forEach((button, index) => {
-            console.log(`Color ${index + 1}`, button.id);
-        });
 
         const cartasEncontradas = buscarCartas(cards);
         console.log('Cartas encontradas:', cartasEncontradas);
@@ -100,5 +103,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         }
         console.log('Cartas válidas:', cartasValidas);
+
+        displayFilteredCards()
     });
 })
