@@ -10,8 +10,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     const result = [];
     //valor del input
     let inputValue = "";
-    searchInput.addEventListener('input', function() {
-        inputValue = searchInput.value;
-        console.log(inputValue);
+    searchInput.addEventListener('blur', function() {
+        inputValue = searchInput.value.toLowerCase();
+
+        if (inputValue.length >= 3) {
+            // console.log('valor de inputValue', inputValue)
+            for (let i = 0; i < cards.length; i++){
+                if (cards[i].title.toLowerCase().includes(inputValue)&& !result.includes(cards[i])){
+                    result.push(cards[i])
+                }
+            }
+            console.log(result)
+        }
     });
 })
