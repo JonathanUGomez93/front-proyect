@@ -1,26 +1,38 @@
 document.addEventListener('DOMContentLoaded', async function () {
-    //fetch a API
     const data = await fetch('/api/test')
     const cards = await data.json()
-    //input de busqueda
+
     const searchInput = document.querySelector('.inputNav')
-    //botón de buscar
     const searchButton = document.querySelector('.searchButtonNav')
-    //array de resultados
+    const inputContainer = document.getElementById('inputContainer')
+    const inputResultsContainer = document.createElement('div')
+
     const result = [];
-    //valor del input
     let inputValue = "";
-    searchInput.addEventListener('blur', function() {
+
+    const resultsDisplay = () => {
+        cards.forEach(card => {
+            if (card.title.toLowerCase().includes(inputValue)) {
+                const inputCards = document.createElement('p')
+                inputCards.textContent = `${card.title}`
+                inputResultsContainer.appendChild(inputCards)
+                inputContainer.appendChild(inputResultsContainer)
+            }
+        });
+    }
+
+    searchInput.addEventListener('input', function() {
         inputValue = searchInput.value.toLowerCase();
 
         if (inputValue.length >= 3) {
-            // console.log('valor de inputValue', inputValue)
             for (let i = 0; i < cards.length; i++){
                 if (cards[i].title.toLowerCase().includes(inputValue)&& !result.includes(cards[i])){
                     result.push(cards[i])
                 }
             }
             console.log(result)
+            inputResultsContainer.textContent = "";
+            resultsDisplay()
         }
     });
 })
