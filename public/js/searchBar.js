@@ -4,19 +4,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const searchInput = document.querySelector('.inputNav')
     const searchButton = document.querySelector('.searchButtonNav')
-    const inputContainer = document.getElementById('inputContainer')
-    const inputResultsContainer = document.createElement('div')
+    const inputResultsParas = document.getElementById('inputResultsParas')
 
     const result = [];
     let inputValue = "";
 
     const resultsDisplay = () => {
-        cards.forEach(card => {
+        result.forEach(card => {
             if (card.title.toLowerCase().includes(inputValue)) {
-                const inputCards = document.createElement('p')
+                const inputCards = document.createElement('a')
+                inputCards.href = `/productdetail/${card.id}`
                 inputCards.textContent = `${card.title}`
-                inputResultsContainer.appendChild(inputCards)
-                inputContainer.appendChild(inputResultsContainer)
+                inputResultsParas.appendChild(inputCards)
             }
         });
     }
@@ -26,13 +25,16 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         if (inputValue.length >= 3) {
             for (let i = 0; i < cards.length; i++){
-                if (cards[i].title.toLowerCase().includes(inputValue)&& !result.includes(cards[i])){
+                if (cards[i].title.toLowerCase().includes(inputValue)&& !result.includes(cards[i]) && result.length <= 10){
                     result.push(cards[i])
                 }
             }
             console.log(result)
-            inputResultsContainer.textContent = "";
+            inputResultsParas.textContent = "";
             resultsDisplay()
+        }
+        if (inputValue.length == 0) {
+            inputResultsParas.textContent = '';
         }
     });
 })

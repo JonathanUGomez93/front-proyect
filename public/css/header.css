@@ -26,9 +26,16 @@ font-family: 'Lato', sans-serif;
     padding: 5px;
     border-radius: 5px;
     outline-color: #000;
+    width: 100%;
 }
 .inputNav::placeholder{
     padding: 5px;
+}
+.formNav{
+    position: relative;
+}
+.inputNavLabel{
+    display: none;
 }
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -37,13 +44,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
 }
 .searchButtonNav{
     all: unset;
-    position: relative;
-    right: 25px;
-    z-index: 2;
+    position: absolute;
+    right: 1px;
     background-color: transparent;
+    z-index: 2;
 }
 .searchButtonNav i{
     color: #000;
+    position: relative;
+    top: 8px;
+    right: 5px;
 }
 .seccionesCart{
     display: flex;
@@ -126,6 +136,41 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
     border: 1px solid #252424;
     top: 70px;
 }
+
+
+
+
+.inputResults{
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+.inputResults .inputResultsParas{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.inputResultsParas a{
+    all: unset;
+    margin: 0;
+    border-bottom: 1px solid #252424;
+    border-inline: 1px solid #252424;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*media queries*/
 /*tablet*/
 @media (min-width: 520px){
