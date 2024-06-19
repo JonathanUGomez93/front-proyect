@@ -136,10 +136,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
     border: 1px solid #252424;
     top: 70px;
 }
-
-
-
-
 .inputResults{
     position: relative;
     text-align: center;
@@ -159,18 +155,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none;
     border-inline: 1px solid #252424;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 /*media queries*/
 /*tablet*/
 @media (min-width: 520px){
