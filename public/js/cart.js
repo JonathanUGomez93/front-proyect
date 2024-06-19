@@ -14,15 +14,15 @@ document.addEventListener('DOMContentLoaded', async function () {
             itemContainer.classList.add('itemContainer')
             container.appendChild(itemContainer);
 
+            //div boton eliminar
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('buttonContainer')
+            itemContainer.appendChild(buttonContainer);
+
             //div button&Image
             const buttonImage = document.createElement('div');
             buttonImage.classList.add('buttonNImage')
             itemContainer.appendChild(buttonImage);
-
-            //div boton eliminar
-            const buttonContainer = document.createElement('div');
-            buttonContainer.classList.add('buttonContainer')
-            buttonImage.appendChild(buttonContainer);
 
             // Botón para eliminar el producto del carrito
             const removeBtn = document.createElement('button');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             
             // Título de los productos
             const itemTitle = document.createElement('p');
-            itemTitle.textContent = `Carta: ${item.title}`;
+            itemTitle.textContent = `${item.title}`;
             itemTitle.classList.add('itemTitle')
             infoContainer.appendChild(itemTitle);
     
@@ -91,4 +91,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     totalPaymentP.textContent = `Total A Pagar: $${totalAcumulado}`;
     totalPayment.appendChild(totalPaymentP)
+
+    //borro todo el carrito de compras
+    const emptyCart = () => {
+        carrito = [];
+
+        if (carrito = []) {
+            console.log('carrito vacio')
+        } else {
+            displayCart()
+        }
+    }
 })
