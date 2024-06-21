@@ -1,3 +1,16 @@
+.cartTitle{
+    text-align: center;
+    font-family: 'Lobster';
+    margin-block: 1rem;
+    font-size: 2.5rem;
+}
+.cartParag{
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+    font-family: 'Roboto';
+    margin-block: 2rem;
+}
 .itemContainer{
     display: flex;
     align-items: center;
@@ -40,6 +53,37 @@
 .infoContainer p{
     font-family: 'Roboto';
 }
+.totalPayment {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.totalPayment p{
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+}
+.buyDeleteContainer{
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+.buyDeleteContainer button{
+    border-radius: 5px;
+    margin-inline: 1rem;
+    margin-block: 1rem;
+    padding-block: 5px;
+    padding-inline: 20px;
+    border:1px solid #6a7fc1;
+}
+.buyButton{
+    background-color: #1c59f4;
+    color: #e7e7e7;
+    font-family: 'Lobster';
+}
+.emptyCartButton{
+    background-color: transparent;
+    color: #6a7fc1;
+}
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
@@ -55,5 +99,31 @@
 }
 /*desktop*/
 @media (min-width: 1280px){
-
+    .itemContainer{
+        width: 80%;
+        margin-inline: auto;
+    }
+    .buttonNImage img{
+        width: 8rem;
+    }
+    .removeBtn{
+        bottom: 100px;
+        left: 5px;
+    }
+    .buyDeleteContainer button{
+        margin-inline: 1rem;
+        margin-block: 1rem;
+        padding-block: 5px;
+        padding-inline: 20px;
+        font-size: 1.3rem;
+    }
+    .buyButton{
+        background-color: #1c59f4;
+        color: #e7e7e7;
+        font-family: 'Lobster';
+    }
+    .emptyCartButton{
+        background-color: transparent;
+        color: #6a7fc1;
+    }
 }

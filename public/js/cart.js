@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     let carrito = JSON.parse(sessionStorage.getItem('cart')) || [];
 
     const container = document.querySelector('.container');
+    const buyDeleteContainer = document.querySelector('.buyDeleteContainer');
 
     const displayCart = () => {
-        // Limpiar el contenedor del carrito
         container.innerHTML = '';
     
         carrito.forEach((item, index) => {
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 // Guardo carrito en el sessionStorage
                 sessionStorage.setItem('cart', JSON.stringify(carrito));
                 console.log('carrito updated', carrito)
-                
+
+                payment()
                 displayCart();
             });
             buttonContainer.appendChild(removeBtn);
@@ -81,25 +82,50 @@ document.addEventListener('DOMContentLoaded', async function () {
     //Calculo Total a Pagar
     const totalPayment = document.querySelector('.totalPayment')
     const totalPaymentP = document.createElement('p')
-
-    let totalAcumulado = 0;
-
-    carrito.forEach(item => {
-        let precioTotalItem = item.price * item.quantity;
-        totalAcumulado += precioTotalItem;
-    });
     
-    totalPaymentP.textContent = `Total A Pagar: $${totalAcumulado}`;
-    totalPayment.appendChild(totalPaymentP)
+    const payment = () => {
+    
+        let totalAcumulado = 0;
+
+        carrito.forEach(item => {
+            let precioTotalItem = item.price * item.quantity;
+            totalAcumulado += precioTotalItem;
+        });
+        
+        totalPaymentP.textContent = `Total A Pagar: $${totalAcumulado}`;
+        totalPayment.appendChild(totalPaymentP)
+    }
+    payment()
 
     //borro todo el carrito de compras
     const emptyCart = () => {
-        carrito = [];
-
-        if (carrito = []) {
-            console.log('carrito vacio')
+        if (carrito.length > 0) {
+            carrito = []; // Borra todos los productos del carrito
+            sessionStorage.removeItem('cart'); // Elimina el carrito de la sesión
+            console.log("El carrito se ha vaciado correctamente.");
         } else {
-            displayCart()
+            console.log("El carrito ya está vacío.");
         }
+        payment()
+        displayCart()
     }
+
+    //Boton de comprar
+    const buyButton = document.createElement('button')
+    buyButton.textContent = 'Comprar'
+    buyButton.classList = 'buyButton'
+    buyButton.addEventListener('click', () => {
+        console.log('Compra Exitosa!')
+        carrito = [];
+    })
+    buyDeleteContainer.appendChild(buyButton)
+
+    //Boton de borrado general
+    const emptyCartButton = document.createElement('button')
+    emptyCartButton.textContent = 'Borrar Todo'
+    emptyCartButton.classList = 'emptyCartButton'
+    emptyCartButton.addEventListener('click', () => {
+        emptyCart()
+    })
+    buyDeleteContainer.appendChild(emptyCartButton)
 })
