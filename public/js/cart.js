@@ -110,13 +110,45 @@ document.addEventListener('DOMContentLoaded', async function () {
         displayCart()
     }
 
+    //Rancio cartelito de gracias por su compra
+    const purchaseSign = () => {
+        const purchaseSign = document.querySelector('.purchaseSign')
+        //contenedor del cartel
+        const signContainer = document.createElement('div')
+        signContainer.classList = 'purchaseSignContainer'
+        purchaseSign.appendChild(signContainer)
+
+        //mensaje del cartel
+        const signTitle = document.createElement('p')
+        signTitle.classList = 'purchaseSignTitle'
+        signTitle.textContent = '¡Gracias por su compra!'
+        signContainer.appendChild(signTitle)
+
+        //mensaje directo de redirección
+        const signRedirect = document.createElement('a')
+        signRedirect.classList = 'purchaseSignRedirect'
+        signRedirect.textContent = 'Haz click aquí'
+        signRedirect.href = '/'
+        signContainer.appendChild(signRedirect)
+
+        //mensaje final
+        const signFinal = document.createElement('p')
+        signFinal.classList = 'purchaseSignFinal'
+        signFinal.textContent = 'si no eres redirigido automáticamente en 5 segundos'
+        signContainer.appendChild(signFinal)
+    }
+
     //Boton de comprar
     const buyButton = document.createElement('button')
     buyButton.textContent = 'Comprar'
     buyButton.classList = 'buyButton'
     buyButton.addEventListener('click', () => {
         console.log('Compra Exitosa!')
-        carrito = [];
+        purchaseSign()
+        setTimeout(() => {
+            window.location.href = '/';
+            emptyCart()
+        }, 5000)
     })
     buyDeleteContainer.appendChild(buyButton)
 
