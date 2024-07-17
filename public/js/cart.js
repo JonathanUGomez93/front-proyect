@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const container = document.querySelector('.container');
     const buyDeleteContainer = document.querySelector('.buyDeleteContainer');
+    const footer = document.querySelector('footer')
+
+    if (carrito.length === 0) {
+        footer.classList.add('emptyCart')
+    }
 
     const displayCart = () => {
         container.innerHTML = '';
@@ -100,8 +105,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     //borro todo el carrito de compras
     const emptyCart = () => {
         if (carrito.length > 0) {
-            carrito = []; // Borra todos los productos del carrito
-            sessionStorage.removeItem('cart'); // Elimina el carrito de la sesión
+            carrito = [];
+            sessionStorage.removeItem('cart');
             console.log("El carrito se ha vaciado correctamente.");
         } else {
             console.log("El carrito ya está vacío.");
@@ -143,8 +148,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     buyButton.textContent = 'Comprar'
     buyButton.classList = 'buyButton'
     buyButton.addEventListener('click', () => {
-        console.log('Compra Exitosa!')
         purchaseSign()
+        buyButton.disabled = true;
         setTimeout(() => {
             window.location.href = '/';
             emptyCart()

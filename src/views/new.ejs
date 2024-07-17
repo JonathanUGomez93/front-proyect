@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/css/section.css">
     <!-- scripts -->
     <script src="/js/filters.js" defer></script>
+    <script src="/js/categoryContent.js" defer></script>
     <title>Novedades - MTG DFE</title>
 </head>
 <body>
@@ -41,19 +42,12 @@
                 <button class="buttonFilters" id="buttonFilters">Aplicar Filtros</button>
             </div>
             <div class="contentDisplay">
-                <% for( let i = 0; i < cards.length; i++ ) { %>
-                    <% if (cards[i].new == 1) { %>
-                        <a href="/productdetail/<%= cards[i].id %>">
-                            <img class="img1" src="<%= cards[i].front_img %>"/>
-                        </a>
-                    <% } %>
-                <% } %>
+
             </div>
         </div>
-        <div class="pagination">
-            <button class="page current">1</button>
-            <button class="page">2</button>
-            <button class="page">3</button>
+        <div class="seeMoreButton">
+            <button class="seeMore">Ver más</button>
+            <button class="seeLess">Ver menos</button>
         </div>
     </div>
     <%- include('partials/footer') %>
