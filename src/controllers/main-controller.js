@@ -12,7 +12,12 @@ const controller = {
     },
     new: async (req, res) => {
         try {
-            let cards = await db.Card.findAll();
+            let cards = await db.Card.findAll({
+                where: {
+                    new: 1
+                },
+                limit: 8
+            });
             res.render("new", { cards: cards });
         } catch (err) {
             console.log(err);
@@ -21,16 +26,35 @@ const controller = {
     },
     featured: async (req, res) => {
         try {
-            let cards = await db.Card.findAll();
-            res.render("featured", { cards: cards });
+            let page = parseInt(req.query.page) || 1;
+            let limit = parseInt(req.query.limit) || 50;
+            let offset = (page - 1) * limit;
+    
+            let cards = await db.Card.findAll({
+                where: {
+                    featured: 1
+                },
+                limit: limit,
+                offset: offset
+            });
+            function addLimit(req, res) {
+                limit += 8
+                console.log('limit new value:', limit) 
+            }
+            res.render("featured", { cards: cards, page: page, limit: limit, addLimit});
         } catch (err) {
             console.log(err);
-            res.status(500).send('La cagaste weon')
+            res.status(500).send('you trolled, dude');
         }
     },
     sale: async (req, res) => {
         try {
-            let cards = await db.Card.findAll();
+            let cards = await db.Card.findAll({
+                where:{
+                    on_sale: 1
+                },
+                limit: 8
+            });
             res.render("sale", { cards: cards });
         } catch (err) {
             console.log(err);
@@ -39,7 +63,9 @@ const controller = {
     },
     allCards: async (req, res) => {
         try {
-            let cards = await db.Card.findAll();
+            let cards = await db.Card.findAll({
+                limit: 8
+            });
             res.render("allCards", { cards: cards });
         } catch (err) {
             console.log(err);

@@ -73,22 +73,22 @@
     margin-block: 1rem;
     padding-block: 5px;
     padding-inline: 20px;
-    border:1px solid #6a7fc1;
 }
 .buyButton{
-    background-color: #1c59f4;
+    background-color: #000;
     color: #e7e7e7;
     font-family: 'Lobster';
     transition: all 300ms;
 }
-.buyButton:hover{
-    -webkit-box-shadow:0px 0px 5px 1px rgba(28,89,244,0.9);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(28,89,244,0.9);
-    box-shadow: 0px 0px 5px 1px rgba(28,89,244,0.9);
+.buyButton:hover {
+    -webkit-box-shadow: 0px 0px 5px 1px #000;
+    -moz-box-shadow: 0px 0px 5px 1px #000;
+    box-shadow: 0px 0px 5px 1px #000;
 }
 .emptyCartButton{
     background-color: transparent;
-    color: #6a7fc1;
+    color: #000;
+    border:1px solid #000;
 }
 .purchaseSignContainer{
     position: fixed;
@@ -108,7 +108,7 @@
 .purchaseSignTitle{
     font-family: 'Lobster';
     font-size: 1.7rem;
-    color: #1c59f4;
+    color: #000;
 }
 .purchaseSignRedirect{
     all: unset;
@@ -116,7 +116,7 @@
     font-family: 'Playfair';
     font-size: 1.4rem;
     text-decoration: underline #e7e7e7;
-    background-color: #1c59f4;
+    background-color: #000;
     color: #e7e7e7;
     padding: 10px;
 }
@@ -125,8 +125,15 @@
     font-size: 1.2rem;
     text-align: center;
     margin-inline: 5px;
-    color: #1c59f4;
+    color: #000;
 }
+.buttonDisabled{
+    pointer-events: none;
+}
+.emptyCart {
+    position: absolute;
+    bottom: 0;
+  }
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
@@ -163,15 +170,6 @@
         padding-block: 5px;
         padding-inline: 20px;
         font-size: 1.3rem;
-    }
-    .buyButton{
-        background-color: #1c59f4;
-        color: #e7e7e7;
-        font-family: 'Lobster';
-    }
-    .emptyCartButton{
-        background-color: transparent;
-        color: #6a7fc1;
     }
     .purchaseSignTitle{
         font-size: 2rem;
