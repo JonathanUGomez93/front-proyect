@@ -105,5 +105,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.log('Cartas válidas:', cartasValidas);
 
         displayFilteredCards()
+
+        cartasValidas.length = 0;
     });
 })
