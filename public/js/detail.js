@@ -67,6 +67,18 @@ document.addEventListener('DOMContentLoaded', async function () {
             sessionStorage.setItem("cart", cartJSON);
 
             console.log('carrito', cart)
+
+            Toastify({
+                text: "¡Agregado exitosamente!",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: "#000",
+                },
+                onClick: function(){}
+            }).showToast();
         });
     });
 })
