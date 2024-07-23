@@ -14,17 +14,15 @@ font-family: 'Lato', sans-serif;
     text-align: center;
     font-family: 'Playfair';
     margin-block: 1rem;
-    padding-top: 1rem;
+    margin-top: 2rem;
 }
 .services{
     height: 150px;
-    border-radius: 25px;
     display: flex;
     width: 90%;
     margin: auto;
 }
 .servicesTitle{
-    border: 1px solid #b4b4b4;
     width: 45%;
     height: 100%;
     margin: auto;
@@ -32,7 +30,7 @@ font-family: 'Lato', sans-serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    overflow: hidden;
 }
 .servicesTitle h2{
     font-family: 'PlayFair';
@@ -42,6 +40,24 @@ font-family: 'Lato', sans-serif;
     font-size: 0.9rem;
     text-wrap: balance;
     text-align: center;
+}
+.servicesTitle img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    top: 60px;
+    opacity: 0.3;
+}
+.relative{
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    bottom: 60px;
 }
 .buylistLink{
     text-align: center;
@@ -117,51 +133,49 @@ hr{
     margin-bottom: 2rem;
     text-align: center;
 }
-.payment i{
-    font-size: 2.5rem;
-    width: 50%;
-    margin-bottom: 10px;
-}
-.paymentContainer{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-.paymentIcon{
-    text-align: center;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.paymentIcon i{
-    transition: scale 0.5s;
-}
-.paymentIcon p{
-    text-align: center;
-    visibility: visible;
-    transition: visibility 0.2s;
-}
-.paymentIcon:hover i{
-    scale: 1.2;
-}
-.paymentIcon:hover p{
-    visibility: visible;
-}
+.carrouselContainer{
+    overflow: hidden;
+  }
+  .carrousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 15rem;
+    animation: scroll 15s linear infinite;
+  }
+  .carrousel img{
+    height: 100px;
+  }
+  @keyframes scroll{
+    to {
+      translate: calc(-4 * 15rem);
+    }
+  }
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
     .servicesTitle{
         transition: all 0.5s;
     }
-    .servicesTitle:hover{
+    /* .servicesTitle:hover{
         box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.8);-webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.8);-moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.8);
-    }
+    } */
     .servicesTitle h2{
         font-size: 1.5rem;
     }
     .servicesTitle p{
         font-size: 1rem;
+    }
+    .servicesTitle img{
+        opacity: 0.4;
+    }
+    .servicesTitle img:hover{
+        transform: scale(1.2);
+        filter: blur(5px);
+        filter: grayscale(100%);
+        opacity: 0.3;
+    }
+    .relative{
+        bottom: 120px;
     }
     .mountain{
         background-size:contain;
@@ -188,11 +202,17 @@ hr{
         background-color: #000;
         color: #fff;
     }
-    .paymentIcon p{
-        text-align: center;
-        visibility: hidden;
-        transition: visibility 0.2s;
-    }
+    .carrousel{
+        grid-auto-columns: 20rem;
+      }
+    .carrousel img{
+        height: 125px;
+      }
+      @keyframes scroll{
+        to {
+          translate: calc(-4 * 20rem);
+        }
+      }
 }
 /*desktop*/
 @media (min-width: 1280px){
@@ -201,6 +221,12 @@ hr{
     }
     .servicesTitle{
         width: 30%;
+    }
+    .servicesTitle img{
+        opacity: 0.5;
+    }
+    .relative{
+        bottom: 130px;
     }
     .buylistLink h4{
         font-size: 1.1rem;
@@ -219,15 +245,7 @@ hr{
     .payment h4{
         font-size: 2rem;
     }
-    .paymentContainer{
-        width: 50%;
-        margin-inline: auto;
-        margin-top: 3rem;
-    }
-    .paymentIcon i{
-        font-size: 3rem;
-    }
-    .paymentIcon p{
-        font-size: 1.3rem;
-    }
+    .carrousel img{
+        height: 150px;
+      }
 }
