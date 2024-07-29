@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', async function () { 
-    const dropdownButton = document.querySelector('.dropdown')
+    //menu de singles
+    const dropdownSingles = document.querySelector('.singles')
+    //menu de sellado
     const dropdownSealed = document.querySelector('.sealed')
+    //div de las opciones de menu de sellado
     const sealedOptions = document.querySelector('.sealedOptions')
-    const dropdownOptionContainer = document.querySelector('.dropdownOptionContainer')
+    //div de opciones con clase visibility. Default es hidden
+    const dropdownVisibility = document.querySelector('.dropdownVisibility')
 
-    dropdownButton.addEventListener('click', () => {
-        dropdownOptionContainer.classList.toggle('dropdownOptionVisibility');
-        dropdownOptionContainer.classList.toggle
-        ('dropdownOptionContainer');
+    dropdownSingles.addEventListener('click', () => {
+        dropdownVisibility.classList.toggle('dropdownVisibility');
+        sealedOptions.classList.add('dropdownVisibility');
     })
     dropdownSealed.addEventListener('click', () => {
-        sealedOptions.classList.toggle('dropdownOptionVisibility');
-        sealedOptions.classList.toggle('dropdownOptionContainer');
+        sealedOptions.classList.toggle('dropdownVisibility');
+        dropdownVisibility.classList.add('dropdownVisibility');
     })
 })
