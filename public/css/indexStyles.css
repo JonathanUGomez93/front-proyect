@@ -150,6 +150,9 @@ hr{
       translate: calc(-4 * 15rem);
     }
   }
+  .indexPayment{
+    margin-top: 0rem;
+}
 /*media querys*/
 /*tablet*/
 @media (min-width: 520px){
@@ -245,7 +248,4 @@ hr{
     .payment h4{
         font-size: 2rem;
     }
-    .carrousel img{
-        height: 150px;
-      }
 }
