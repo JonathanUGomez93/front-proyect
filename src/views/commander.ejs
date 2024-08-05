@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/commander.css">
 </head>
 <body>
-    <h1>hola!</h1>
+    <div class="contentWrapper">
+        <%- include('partials/header') %>
+        <main>
+            <div class="commanderTitle">
+                <h1>Commander</h1>
+                <p>¿No tenés tiempo para una brew? ¿Querés aprender a jugar el formato más popular de Magic o una experiencia sit & play?
+                <span>Tenemos tu precon ideal.</span></p>
+            </div>
+            <div class="commanderPrecons">
+                <img src="/images/explorersofthedeep.png" alt="precon merfolks">
+                <img src="/images/ahoymateys.png" alt="precon pirates">
+                <img src="/images/firstflight.png" alt="precon flyers">
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+    </div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+.contentWrapper{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.commanderTitle{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    text-wrap: pretty;
+    text-align: center;
+}
+.commanderTitle h1{
+    font-family: 'PlayFair';
+    margin-block: 1rem;
+}
+.commanderTitle span{
+    font-family: 'roboto';
+}
+.commanderPrecons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+}
+.commanderPrecons img{
+    width: 30%;
+}
+/*media querys*/
+/*tablet*/
+@media (min-width: 560px){
+}
+/*desktop*/
+@media (min-width: 1280px){
+
+}
