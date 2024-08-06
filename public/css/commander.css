@@ -20,12 +20,23 @@
 }
 .commanderPrecons{
     display: flex;
-    justify-content: space-evenly;
-    width: 90%;
-    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .commanderPrecons img{
-    width: 30%;
+    width: 55vw;
+}
+.commanderPrecons p{
+    text-align: center;
+}
+.preconContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: aqua;
+    margin-block: 1rem;
 }
 /*media querys*/
 /*tablet*/
