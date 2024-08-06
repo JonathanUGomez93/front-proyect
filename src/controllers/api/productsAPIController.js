@@ -26,6 +26,15 @@ const productsAPIController = {
       console.log(err)
       res.status(500).send('tu api no anda')
     }
+  },
+  sealed: async (req, res) => {
+    try {
+      let sealed = await Sealed.findAll();
+      res.send(sealed)
+    } catch (err) {
+      console.log(err)
+      res.status(500).send('tu api no anda')
+    }
   }
 };
 
