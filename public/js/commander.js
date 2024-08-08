@@ -15,11 +15,42 @@ document.addEventListener('DOMContentLoaded', async function () {
         const preconImage = document.createElement('img')
         preconImage.src = item.img
         preconImage.alt = item.title
+        //la imagen debe tener cursos pointer
+        preconImage.style.cursor = 'pointer'
         preconContainer.appendChild(preconImage)
 
+        //precio del precon
+        const preconPrice = document.createElement('h2')
+        preconPrice.textContent =`${item.price} usd`
+        preconContainer.appendChild(preconPrice)
+
         //titulo del precon
-        const preconTitle = document.createElement('p')
+        const preconTitle = document.createElement('h3')
         preconTitle.textContent = item.title
         preconContainer.appendChild(preconTitle)
+
+        if (item.color === 'simic') {
+            preconContainer.classList.add('backgroundSimic')
+            preconTitle.classList.add('titleSimic')
+        }
+        else if (item.color === 'Grixis') {
+            preconContainer.classList.add('backgroundGrixis')
+            preconTitle.classList.add('titleGrixis')
+        } else {
+            preconContainer.classList.add('backgroundAzorius')
+            preconTitle.classList.add('titleAzorius')
+        }
+
+        preconImage.addEventListener('click', () => {
+            //div donde se pondrá la lista cuando se ejecute el click sobre la imagen del precon
+            const preconList = document.createElement('div')
+            preconList.classList.add('preconList')
+            preconContainer.appendChild(preconList)
+        
+            //contenido de la lista
+            const preconListContent = document.createElement('p')
+            preconListContent.textContent = item.content
+            preconList.appendChild(preconListContent)
+        })
     });
 })

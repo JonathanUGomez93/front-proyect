@@ -14,7 +14,8 @@ CREATE TABLE cards  (
     new TINYINT(1),
     featured TINYINT(1),
     front_img VARCHAR(255),
-    flip_img VARCHAR (255)
+    flip_img VARCHAR (255),
+    colors VARCHAR (255)
 );
 
 CREATE TABLE sealed  (
@@ -26,5 +27,8 @@ CREATE TABLE sealed  (
     on_sale TINYINT(1),
     new TINYINT(1),
     featured TINYINT(1),
-    img VARCHAR (255)
+    commander TINYINT(1),
+    modern TINYINT(1),
+    img VARCHAR (255),
+    color VARCHAR (255)
 );
