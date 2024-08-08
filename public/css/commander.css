@@ -29,6 +29,14 @@
 }
 .commanderPrecons p{
     text-align: center;
+    font-family: 'Playfair';
+}
+h2{
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+}
+h3{
+    font-family: 'Lobster';
 }
 .preconContainer{
     display: flex;
@@ -37,6 +45,33 @@
     width: 100%;
     background-color: aqua;
     margin-block: 1rem;
+}
+.titleSimic {
+    background: linear-gradient(126deg, #1dd942, #095991);
+    background-clip: text;
+    color: transparent;
+}
+.titleGrixis {
+    background: linear-gradient(90deg, rgba(9, 89, 145, 1) 10%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 1) 65%, rgba(209, 4, 47, 1) 90%);
+    background-clip: text;
+    color: transparent;
+}
+.titleAzorius {
+    background: linear-gradient(90deg, rgba(240, 241, 133, 1) 10%, rgba(9, 89, 145, 1) 90%);
+    background-clip: text;
+    color: transparent;
+}
+.backgroundSimic{
+    background: rgb(29,217,66);
+    background: linear-gradient(90deg, rgba(29,217,66,0.3) 10%, rgba(9,89,145,0.3) 90%);
+}
+.backgroundAzorius{
+    background: rgb(240,241,133);
+    background: linear-gradient(90deg, rgba(240,241,133,0.3) 10%, rgba(9,89,145,0.3) 90%);
+}
+.backgroundGrixis{
+    background: rgb(9,89,145);
+    background: linear-gradient(90deg, rgba(9,89,145,0.3) 10%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 70%, rgba(209,4,47,0.3) 90%);
 }
 /*media querys*/
 /*tablet*/

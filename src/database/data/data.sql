@@ -482,3 +482,259 @@ Whenever The Goose Mother attacks, you may sacrifice a Food. If you do, draw a c
 (226, 'Amalia Benavides Aguirre', 'Ward - Pay 3 life.
 Whenever you gain life, Amalia Benavides Aguirre explores. Then destroy all creatures if its power is exactly 20. (To have this creature explore, reveal the top card of your library. Put that card into your hand if it is a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)', 0.99, 'WB', '8', 0,1,1, '/images/amaliabenavidesaguirre.avif', ''),
 (227, 'Bartolome del Presidio', 'Sacrifice another creature or artifact: Put a +1/+1 counter on Bartolome del Presidio.', 0.35, 'WB', '20', 0,0,0,'/images/bartolomedelpresidioshowcase.avif', '');
+
+INSERT INTO sealed (id, title, content, price, stock, on_sale, new, featured, commander, modern, img, color) VALUES 
+(1, 'Explorers Of The Deep', 'Commander
+1 Hakbal of the Surging Soul
+
+Deck
+1 Xolatoyac, the Smiling Flood
+1 Mist Dancer
+1 Ripples of Potential
+1 Wave Goodbye
+1 Bygone Marvels
+1 Deeproot Historian
+1 Topography Tracker
+1 Tributary Instructor
+1 Singer of Swift Rivers
+1 Benthic Biomancer
+1 Commit /// Memory
+1 Coralhelm Commander
+1 Curse of the Swine
+1 Emperor Mihail II
+1 Herald of Secret Streams
+1 Kindred Discovery
+1 Kopala, Warden of Waves
+1 Master of the Pearl Trident
+1 Merfolk Sovereign
+1 Reflections of Littjara
+1 Seafloor Oracle
+1 Surgespanner
+1 Svyelun of Sea and Sky
+1 Thassa, God of the Sea
+1 Thieving Skydiver
+1 Branching Evolution
+1 Deeproot Elite
+1 Hardened Scales
+1 Realmwalker
+1 Ruinous Intrusion
+1 Cold-Eyed Selkie
+1 Kumena, Tyrant of Orazca
+1 Prime Speaker Zegana
+1 Quandrix Command
+1 Simic Ascendancy
+1 Tishana, Voice of Thunder
+1 Vorel of the Hull Clade
+1 Zegana, Utopian Speaker
+1 Metallic Mimic
+1 Alchemists Refuge
+1 Hinterland Harbor
+1 Karns Bastion
+1 Mosswort Bridge
+1 Temple of Mystery
+1 Vineglimmer Snarl
+1 Merfolk Cave-Diver
+1 Aetherize
+1 Deeproot Waters
+1 Merrow Reejerey
+1 Rapid Hybridization
+1 Ravenform
+1 Sage of Fables
+1 Stonybrook Banneret
+1 Beast Within
+1 Nicanzil, Current Conductor
+1 Evolution Sage
+1 Explore
+1 Inspiring Call
+1 Kodamas Reach
+1 Growth Spiral
+1 Kioras Follower
+1 Merfolk Mistbinder
+1 Merfolk Skydiver
+1 Tatyova, Benthic Druid
+1 Arcane Signet
+1 Commanders Sphere
+1 Simic Signet
+1 Sol Ring
+1 Swiftfoot Boots
+1 Command Tower
+1 Llanowar Reborn
+1 Myriad Landscape
+1 Path of Ancestry
+1 Reliquary Tower
+1 Rogues Passage
+1 Secluded Courtyard
+1 Simic Growth Chamber
+1 Temple of the False God
+1 Unclaimed Territory
+7 Forest
+13 Island
+', 49.99, '1', 0, 0, 0, 1, 0, '/images/explorersofthedeep.png', 'simic'),
+(2, 'Ahoy Mateys', 'Commander
+1 Admiral Brass, Unsinkable
+
+Deck
+1 Don Andres, the Renegade
+1 The Indomitable
+1 Storm Fleet Negotiator
+1 Francisco, Fowl Marauder
+1 The Grim Captains Locker
+1 Skeleton Crew
+1 Broadside Bombardiers
+1 Gemcutter Buccaneer
+1 Arm-Mounted Anchor
+1 Amphin Mutineer
+1 Bident of Thassa
+1 Corsair Captain
+1 Evacuation
+1 Timestream Navigator
+1 Warkite Marauder
+1 Black Market Connections
+1 Blood Money
+1 Dire Fleet Ravager
+1 Fathom Fleet Captain
+1 Lethal Scheme
+1 Angraths Marauders
+1 Blasphemous Act
+1 Captain Lannery Storm
+1 Captivating Crew
+1 Chaos Warp
+1 Coercive Recruiter
+1 Dire Fleet Daredevil
+1 Kari Zev, Skyship Raider
+1 Port Razer
+1 Shared Animosity
+1 Admiral Beckett Brass
+1 Hostage Taker
+1 King Narfis Betrayal
+1 Prismari Command
+1 Zara, Renegade Recruiter
+1 Icon of Ancestry
+1 Vanquishers Banner
+1 Choked Estuary
+1 Desolate Lighthouse
+1 Exotic Orchard
+1 Foreboding Ruins
+1 Frostboil Snarl
+1 Geier Reach Sanitarium
+1 Nephalia Drownyard
+1 Smoldering Marsh
+1 Sulfur Falls
+1 Sunken Hollow
+1 Azure Fleet Admiral
+1 Enterprising Scallywag
+1 Daring Saboteur
+1 Departed Deckhand
+1 Distant Melody
+1 Ghost of Ramirez DePietro
+1 Malcolm, Keen-Eyed Navigator
+1 Merchant Raiders
+1 Siren Stormtamer
+1 Spectral Sailor
+1 Windfall
+1 Feed the Swarm
+1 Pitiless Plunderer
+1 Breeches, Brazen Plunderer
+1 Faithless Looting
+1 Rakdos Charm
+1 Ramirez DePietro, Pillager
+1 Arcane Signet
+1 Commanders Sphere
+1 Dimir Signet
+1 Heralds Horn
+1 Izzet Signet
+1 Rakdos Signet
+1 Sol Ring
+1 Wayfarers Bauble
+1 Command Tower
+1 Crumbling Necropolis
+1 Evolving Wilds
+1 Path of Ancestry
+1 Port of Karfell
+1 Rogues Passage
+1 Secluded Courtyard
+1 Terramorphic Expanse
+1 Thriving Bluff
+1 Thriving Isle
+1 Thriving Moor
+1 Unclaimed Territory
+6 Island
+4 Swamp
+5 Mountain
+', 44.99, '1', 0, 0, 0, 1, 0, '/images/ahoymateys.png', 'Grixis'),
+(3, 'First Flight', 'Commander
+1 Isperia, Supreme Judge
+
+Deck
+1 Gideon Jura
+1 Archon of Redemption
+1 Cartographers Hawk
+1 Emeria Angel
+1 Hanged Executioner
+1 Remorseful Cleric
+1 Sephara, Skys Blade
+1 Steel-Plume Marshal
+1 Angler Turtle
+1 Diluvian Primordial
+1 Faerie Formation
+1 Inspired Sphinx
+1 Sharding Sphinx
+1 Sphinx of Enlightenment
+1 Windreader Sphinx
+1 Skycat Sovereign
+1 Aven Gagglemaster
+1 Kangees Lieutenant
+1 Tide Skimmer
+1 Warden of Evos Isle
+1 Cloudblazer
+1 Empyrean Eagle
+1 Jubilant Skybonder
+1 Kangee, Sky Warden
+1 Thunderclap Wyvern
+1 Pilgrims Eye
+1 Skyscanner
+1 Cleansing Nova
+1 Storm Herd
+1 Time Wipe
+1 Winged Words
+1 Migratory Route
+1 Absorb
+1 Sphinxs Revelation
+1 Condemn
+1 Crush Contraband
+1 Disenchant
+1 Generous Gift
+1 Rally of Wings
+1 Swords to Plowshares
+1 Aetherize
+1 Counterspell
+1 Negate
+1 Bident of Thassa
+1 Arcane Signet
+1 Azorius Signet
+1 Commanders Sphere
+1 Hedron Archive
+1 Sky Diamond
+1 Sol Ring
+1 Talisman of Progress
+1 Thought Vessel
+1 True Conviction
+1 Ever-Watching Threshold
+1 Gravitational Shift
+1 Banishing Light
+1 Soul Snare
+1 Vow of Duty
+1 Favorable Winds
+1 Staggering Insight
+1 Moorland Haunt
+1 Port Town
+1 Prairie Stream
+1 Temple of Enlightenment
+1 Coastal Tower
+1 Command Tower
+1 Meandering River
+1 Sejiri Refuge
+1 Tranquil Cove
+15 Plains
+15 Island
+', 19.99, '1', 0, 0, 0, 1, 0, '/images/firstflight.png', 'Azorius');
