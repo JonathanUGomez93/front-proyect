@@ -73,6 +73,18 @@ h3{
     background: rgb(9,89,145);
     background: linear-gradient(90deg, rgba(9,89,145,0.3) 10%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.3) 70%, rgba(209,4,47,0.3) 90%);
 }
+.preconList{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s linear;
+}
+.preconList.transition {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+}
 /*media querys*/
 /*tablet*/
 @media (min-width: 560px){
