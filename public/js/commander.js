@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     //div contenedor de los precons
     const commanderPrecons = document.querySelector('.commanderPrecons')
-
+    
     sealed.forEach(item => {
         //contenedor de cada precon individual
         const preconContainer = document.createElement('div')
@@ -41,22 +41,54 @@ document.addEventListener('DOMContentLoaded', async function () {
             preconTitle.classList.add('titleAzorius')
         }
 
-        //div donde se pondrá la lista cuando se ejecute el click sobre la imagen del precon
-        const preconList = document.createElement('div')
-        preconList.classList.add('preconList')
-        preconContainer.appendChild(preconList)
+        // //div donde se pondrá la lista cuando se ejecute el click sobre la imagen del precon
+        // const preconList = document.createElement('div')
+        // preconList.classList.add('preconList')
+        // preconContainer.appendChild(preconList)
         
-        //contenido de la lista
-        const list = item.content.split('--');
+        // //contenido de la lista
+        // const list = item.content.split('--');
             
-        list.forEach((linea) => {
-            const listContent = document.createElement('p');
-            listContent.textContent = linea.trim();
-            preconList.appendChild(listContent);
+        // list.forEach((linea) => {
+        //     const listContent = document.createElement('h5');
+        //     listContent.textContent = linea.trim();
+        //     listContent.style.fontFamily = 'Roboto';
+        //     preconList.appendChild(listContent);
+        // });
+
+        // preconImage.addEventListener('click', ()=> {
+        //     preconList.classList.toggle('transition')
+        // })
+
+        // Consigo ancho de ventana
+        let anchoVentana = window.innerWidth;
+        // Evento para que sea dinámico
+        window.addEventListener('resize', () => {
+            anchoVentana = window.innerWidth;
+            if (anchoVentana <= 560) {
+                //div donde se pondrá la lista cuando se ejecute el click sobre la imagen del precon
+                const preconList = document.createElement('div')
+                preconList.classList.add('preconList')
+                preconContainer.appendChild(preconList)
+                
+                //contenido de la lista
+                const list = item.content.split('--');
+                list.forEach((linea) => {
+                    const listContent = document.createElement('h5');
+                    listContent.textContent = linea.trim();
+                    listContent.style.fontFamily = 'Roboto';
+                    preconList.appendChild(listContent);
+                });
+                preconImage.addEventListener('click', () => {
+                    preconList.classList.toggle('transition')
+                })
+            }
         });
 
-        preconImage.addEventListener('click', ()=> {
-            preconList.classList.toggle('transition')
-        })
+        //boton de agregar al carrito
+        const preconButton = document.createElement('button')
+        preconButton.textContent = 'Agregar al carrito'
+        preconButton.classList.add('preconButton')
+        preconContainer.appendChild(preconButton)
     });
 })

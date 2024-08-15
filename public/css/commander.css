@@ -43,7 +43,6 @@ h3{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: aqua;
     margin-block: 1rem;
 }
 .titleSimic {
@@ -85,9 +84,46 @@ h3{
     opacity: 1;
     height: 100%;
 }
+.preconButton{
+    all: unset;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-family: 'Lobster';
+    margin-block: 1rem;
+    text-align: center;
+    width: 30%;
+    padding-block: 5px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,1);
+}
 /*media querys*/
 /*tablet*/
 @media (min-width: 560px){
+    .preconButton{
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        transition: all 0.5s;
+    }
+    .preconButton:hover{
+        background-color: #000;
+        color: #fff;
+    }
+    .commanderPrecons{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .commanderPrecons img{
+        width: 25vw;
+    }
+    .preconContainer{
+        margin-inline: 0.5rem;
+    }
+    .preconButton{
+        font-size: 1rem;
+        width: 50%;
+    }
 }
 /*desktop*/
 @media (min-width: 1280px){
