@@ -129,6 +129,16 @@ const controller = {
             console.error(error);
             res.status(500).send('Error interno del servidor.');
         }
+    },
+    preconDetail: async (req, res) => {
+        try {
+            let sealed = await db.Sealed.findByPk(req.params.id)
+                
+            res.render('preconDetail', { sealed: sealed });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error interno del servidor.');
+        }
     }
 };
 module.exports = controller
