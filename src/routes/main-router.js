@@ -17,6 +17,7 @@ router.get("/cart", mainController.cart)
 router.get("/allCards", mainController.allCards)
 router.get("/sealed", mainController.sealed)
 router.get("/sealed/commander", mainController.commander)
+router.get("/sealed/commander/precon/:id", mainController.preconDetail)
 router.get("/sealed/modern", mainController.modern)
 router.get("/test", mainController.test)
 
